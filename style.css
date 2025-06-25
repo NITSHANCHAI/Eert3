@@ -1,0 +1,362 @@
+/* Import Orbitron as fallback */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Custom Fallback Fonts */
+@font-face {
+  font-family: 'Bank Gothic';
+  src: local('Bank Gothic'), local('BankGothic'), local('BankGothic Md BT');
+}
+
+@font-face {
+  font-family: 'Eurostile';
+  src: local('Eurostile'), local('Eurostile LT Std'), local('Eurostile-Regular');
+}
+
+/* ========== GLOBAL STYLES ========== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Eurostile', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #f0f0f0;
+  background-image: url('assets/IMG_1410.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* subtle darkness for readability */
+  z-index: -1;
+}
+
+/* ========== HEADER ========== */
+header {
+  text-align: center;
+  padding: 3em 1em;
+}
+
+/* ========== LOGO ========== */
+.logo {
+  width: 120px;
+}
+
+/* ========== MAIN SECTION ========== */
+section {
+  padding: 2em;
+  max-width: 900px; /* Optional: wider content */
+  margin: auto;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 2em;
+  font-size: 1em; /* 🔍 Increased from 0.8em */
+  color: #bbb;
+}
+
+/* ========== HEADINGS ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Eurostile', 'Orbitron', sans-serif;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* ========== PARAGRAPH ========== */
+p {
+  font-size: 1.125em; /* Slightly larger than base (≈ 20px) */
+  margin-bottom: 1em;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky header styling */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 1em;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive nav for mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+
+/* ========== FADE-IN ON SCROLL ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== COLLAPSIBLE SECTIONS ========== */
+.collapsible-toggle {
+  background: none;
+  border: none;
+  color: #f0f0f0;
+  font-size: 1em;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+.collapsible-content {
+  display: none;
+  transition: all 0.4s ease;
+}
+.collapsible-content.open {
+  display: block;
+}
+
+/* Glowing email link */
+.glow-link {
+  color: #0ff;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.glow-link:hover {
+  color: #aff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+.accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  margin-bottom: 2em;
+  border: 1px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: #111;
+  color: #0ff;
+  font-size: 1.1em;
+  padding: 1em;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #222;
+}
+
+.accordion-body {
+  padding: 1em;
+  display: block;
+}
+
+.storyboard-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border: 1px solid #222;
+  margin-bottom: 1em;
+}
+
+.download-btn {
+  background: transparent;
+  color: #0ff;
+  padding: 0.5em 1em;
+  border: 1px solid #0ff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #0ff;
+  color: #000;
+}
+
+.toggle-script {
+  background: none;
+  border: 1px solid #0ff;
+  color: #0ff;
+  padding: 0.4em 1em;
+  margin-top: 1em;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.toggle-script:hover {
+  background: #0ff;
+  color: #000;
+}
+
+.script-content {
+  margin-top: 1em;
+  background: #111;
+  padding: 1em;
+  border-left: 2px solid #0ff;
+}
+
+/* Landing Overlay */
+#landing-overlay {
+  font-family: Orbitron, sans-serif;
+  color: #0ff;
+  font-size: 1.2em;
+  animation: fadeIn 2s ease forwards;
+}
+
+.landing-symbol {
+  font-size: 4em;
+  margin-bottom: 1em;
+  animation: pulse 3s infinite;
+}
+
+.landing-quote {
+  margin-bottom: 2em;
+  opacity: 0;
+  animation: fadeText 3s ease forwards;
+  animation-delay: 2s;
+}
+
+.enter-btn {
+  background: transparent;
+  border: 2px solid #0ff;
+  color: #0ff;
+  padding: 0.8em 2em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  opacity: 0;
+  animation: fadeText 2s ease forwards;
+  animation-delay: 4s;
+}
+
+.enter-btn:hover {
+  background: #0ff;
+  color: #000;
+}
+
+/* Animations */
+@keyframes fadeText {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* Animated header effect */
+.fade-in-header {
+  display: inline-block;
+  font-size: 2.8rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2.5s ease forwards;
+  animation-delay: 0.5s;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Pulse animation for main header */
+.pulse-effect {
+  animation: fadeInUp 2.5s ease forwards, pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 8px #88ccff, 0 0 12px #88ccff;
+  }
+  50% {
+    text-shadow: 0 0 8px #fff, 0 0 14px #66bfff, 0 0 18px #66bfff;
+  }
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 8px #88ccff, 0 0 12px #88ccff;
+  }
+}
+
+
+/* Centered content styling for better readability */
+.centered-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* slight dark overlay for better text visibility */
+    border-radius: 10px;
+}
+
+
+/* Translucent background for special emphasis */
+.translucent-background {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2em;
+    border-radius: 12px;
+}
+
+/* Enhanced translucent background styling */
+.translucent-background {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2em 3em;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 2em auto;
+}
