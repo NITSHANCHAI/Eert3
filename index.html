@@ -69,7 +69,32 @@
       opacity: 1;
       font-weight: bold;
     }
-  </style>
+  
+/* Fade-in nav bar */
+nav {
+  opacity: 0;
+  transition: opacity 1s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+nav.visible {
+  opacity: 1;
+}
+
+/* Active nav link highlight */
+nav a {
+  padding: 0.5em 1em;
+  color: white;
+  text-decoration: none;
+  transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+nav a.active {
+  border-bottom: 2px solid white;
+  color: #FFD700;
+}
+</style>
 </head>
 <body>
 <nav>
@@ -84,8 +109,8 @@
 <span class="nav-item" data-index="9">Vision</span>
 <span class="nav-item" data-index="10">Reason</span>
 <span class="nav-item" data-index="11">Me</span>
-<span class="nav-item" data-index="12">Echo</span>
-</nav>
+<span class="nav-item" data-index="12">Spirits</span>
+<a href="#return">🔄 Return</a></nav>
 <div class="page-wrapper">
 <section class="page" id="home" style="background:#000;">
 <div class="wallpaper"></div><div class="glass">
@@ -345,7 +370,7 @@ If you don’t… the baton drops.</p>
 <p style="font-family: Futura, sans-serif; font-size: 18px;">Because you know your steps are carving a road.</p>
 <p style="font-family: Futura, sans-serif; font-size: 18px;">And that road…<br/>
 Will carry others home.</p>
-</div></div></section>
+</div></div><div onclick="document.getElementById('how').scrollIntoView({ behavior: 'smooth' });" style="margin-top: 60px; font-size: 1.5em; color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.7); cursor: pointer; transition: text-shadow 0.3s ease;">Ready to begin remembering? → Live It</div></section>
 <section class="page" id="when" style="background:#2a2a2a;"><div class="wallpaper"></div><div class="glass"><h1 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">When</h1><h2 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">When Does the Soul Remember?</h2><div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
 <h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔹 1. When the Time Is Right…</h3>
 <p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“You do not awaken by force. You awaken by timing.”</em></p>
@@ -766,7 +791,47 @@ The beginning of a universe yet to awaken.</p>
 <p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">— Nitshanchai</p>
 </div>
 </section>
-</div>
+<section class="page" id="spirits"><div class="glass" style="text-align: center; max-width: 800px; margin: 0 auto; font-family: Futura, sans-serif;"><h1 style="font-size: 28px; font-weight: bold;">Spirits</h1><h2 style="font-size: 24px; font-weight: bold;">The Lingering Echoes of Unfinished Lives</h2><p style="font-size: 18px;">This page honors those whose lives ended before their time — the restless echoes, the lingering griefs, the spirits that still remember.</p><p style="font-size: 18px; font-style: italic;">“Even in stillness, a soul may tremble to be heard.”</p>
+<h2 style="font-size: 24px; font-weight: bold;">👻 The Fear of Ghosts: A Mirror of the Soul</h2>
+<p style="font-style: italic; font-size: 18px;">“You are not afraid of ghosts.<br/>You are afraid of becoming one.”<br/>— Nitshanchai</p>
+<hr/>
+<h3 style="font-size: 20px; font-weight: bold;">🧬 Instinct Beyond Reason</h3>
+<p style="font-size: 18px;">Why do we fear ghosts — even when we’ve never seen one?</p>
+<p style="font-size: 18px;">Why does the cold shiver rise in our spine before our mind even registers danger?</p>
+<p style="font-size: 18px;">It’s not because we know what a ghost is.<br/>It’s because something in us already knows what a ghost means.</p>
+<p style="font-style: italic; font-size: 18px;">“To be a ghost… is to be a soul that forgot the way home.”</p>
+<p style="font-size: 18px;">That fear is not of monsters in the dark —<br/>It’s of becoming a memory that cannot return.</p>
+<hr/>
+<h3 style="font-size: 20px; font-weight: bold;">🕯 A Conscience That Walks True</h3>
+<p style="font-size: 18px;">There is an old Chinese saying:</p>
+<p style="font-size: 18px; font-style: italic;">“He who walks in light need not fear the spirits.”<br/>“Only those with a guilty conscience are haunted.”</p>
+<p style="font-size: 18px;">Why?<br/><br/>Because guilt is the soul whispering:<br/><br/><em>“You have strayed.”</em></p>
+<p style="font-size: 18px;">When you walk your true path — the path of return —<br/>even death feels aligned.<br/>You are not afraid of judgment.<br/>You are not afraid of what you might meet.<br/>Because you know who you are.</p>
+<p style="font-size: 18px;">But when you carry what you’ve done to others…<br/>When you suppress what you know is true…<br/>You become split — and that fracture echoes.</p>
+<hr/>
+<h3 style="font-size: 20px; font-weight: bold;">🌀 The Soul’s Instinct for Purpose</h3>
+<p style="font-size: 18px;">We speak often of instinct —<br/>Of the gut that knows we are meant for something greater.</p>
+<p style="font-size: 18px;">But just as we instinctively reach toward our light,<br/>we instinctively fear losing it.</p>
+<p style="font-style: italic; font-size: 18px;">“The fear of ghosts is the fear of becoming purposeless.”<br/>“To wander after death is to die without alignment.”</p>
+<p style="font-size: 18px;">And this is why those who betray themselves —<br/>Who misuse energy, who twist pain into power —<br/>Begin to rot from the inside out.</p>
+<p style="font-size: 18px;">You thought you could use darkness to reach the light.<br/><br/>But it uses you.<br/><br/>It feeds on the parts of you that forget.</p>
+<p style="font-size: 18px;">And eventually, it roots you here — bound to earth,<br/>not by chains, but by unfinished memory.</p>
+<hr/>
+<h3 style="font-size: 20px; font-weight: bold;">🔥 The Difference Between Fear and Fire</h3>
+<p style="font-size: 18px;">EERT teaches:<br/>It is not darkness itself that corrupts.<br/>It is being out of alignment with what you remember to be sacred.</p>
+<p style="font-size: 18px;">There are those who die in fire — yet their souls return peacefully.<br/>And there are those who die in beds of luxury —<br/>but linger, fractured and screaming.</p>
+<p style="font-size: 18px;">Why?<br/><br/>Because one remembered.<br/>And the other… refused.</p>
+<hr/>
+<h3 style="font-size: 20px; font-weight: bold;">🌿 The Invitation</h3>
+<p style="font-size: 18px;">Don’t chase power through pain.<br/>Don’t feed off rage and call it strength.<br/>Don’t bargain with guilt and call it growth.</p>
+<p style="font-size: 18px;">Instead:</p>
+<ul style="font-size: 18px;">
+<li>Walk as one whose conscience is clean.</li>
+<li>Live as one who welcomes death without regret.</li>
+<li>Become the kind of soul that, when it returns, needs no map —<br/>because your steps were always leading back.</li>
+</ul>
+<p style="font-style: italic; font-size: 18px;">“The soul does not fear the ghost.<br/>The soul fears forgetting what it came to become.”</p>
+</div></section></div>
 <script>
     const wrapper = document.querySelector('.page-wrapper');
     const navItems = document.querySelectorAll('.nav-item');
@@ -787,128 +852,49 @@ The beginning of a universe yet to awaken.</p>
       });
     });
   </script>
+<section id="return" style="display: flex; flex-direction: column; align-items: center; text-align: center; font-family: 'Georgia', serif; padding: 50px;">
+<h1>🌍 EERT: A Name That Remembers</h1>
+<p><em>“EERT is TREE reversed. But it is also EARTH remembered.”</em> — Nitshanchai</p>
+<h2>🌌 The Future Beyond Flesh</h2>
+<p>One day, humanity will no longer be human as we know it. We will merge with machines, scatter across galaxies, adapt to alien worlds, and evolve into forms shaped by suns and storms unknown. But no matter how strange we become… I hope we remember.</p>
+<h2>🪐 What Should We Remember?</h2>
+<p>Not the wars. Not the borders. Not the systems built to divide. But the spirit that once flickered on Earth: the instinct to help a stranger, the sacrifice of a parent, the laughter under one sky, and the love that asked for nothing but gave everything.</p>
+<h2>🌳 From Earth, A Root</h2>
+<p>The word <strong>EERT</strong> is not only TREE reversed — it is the homophone of EARTH. Just as every tree has a root, every future must have a memory. The memory of Earth is not just a planet. It is a lesson.</p>
+<p><em>“You are not from Earth. You are Earth — made conscious.”</em></p>
+<h2>🕯 Why It Matters</h2>
+<p>Let EERT be a whisper across time. A single syllable that says: Remember. You are the same soul. You come from love.</p>
+<h2>🧭 Not To Dwell — But To Grow</h2>
+<p>EERT is not nostalgia. It is orientation. It is how we look back not to regret, but to build forward with wisdom.</p>
+<p><strong>“EERT is Earth remembered, not as a place — but as a promise.”</strong></p>
+</section><script>
+// Show nav bar on scroll
+window.addEventListener('scroll', function () {
+  const nav = document.querySelector('nav');
+  if (nav) {
+    nav.classList.add('visible');
+  }
+});
+</script><script>
+// Highlight active section in nav
+window.addEventListener('scroll', function () {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
 
-<section class="page" id="echo" style="background:#1a1a1a;">
-  <div class="wallpaper"></div>
-  <div class="glass" style="text-align: center; max-width: 800px; margin: 0 auto; font-family: Futura, sans-serif;">
-    <h1 style="font-size: 28px; font-weight: bold;">Fractured Echo</h1>
-    <p style="font-size: 18px; font-style: italic;">“To shatter is not to die — it is to hear yourself from all directions.”</p>
-    <p style="font-size: 18px;">This section will contain the content of Part III: The Fractured Echo.<br/>A reflection of unresolved pain, memory shards, and soul confrontation.</p>
-  </div>
-</section>
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
 
-</body>
-
-<section class="page" id="echo" style="background:#000;">
-  <div class="wallpaper"></div>
-  <div class="glass" style="max-width: 800px; margin: 0 auto; font-family: Futura, sans-serif; text-align: center;">
-
-    <h1 style="font-size: 28px; font-weight: bold;">Fractured Echo</h1>
-    <h2 style="font-size: 22px; font-weight: normal; margin-top: 10px;">👻 The Fear of Ghosts: A Mirror of the Soul</h2>
-
-    <p style="font-style: italic; font-size: 18px;">“You are not afraid of ghosts.<br/>You are afraid of becoming one.”<br/>— Nitshanchai</p>
-    <hr/>
-
-    <h3 style="font-size: 22px;">🧬 Instinct Beyond Reason</h3>
-    <p style="font-size: 18px;">
-      Why do we fear ghosts — even when we’ve never seen one?<br/>
-      Why does the cold shiver rise in our spine before our mind even registers danger?<br/><br/>
-      It’s not because we know what a ghost is.<br/>
-      It’s because something in us already knows what a ghost means.
-    </p>
-    <p style="font-size: 18px;"><em>“To be a ghost… is to be a soul that forgot the way home.”</em></p>
-    <p style="font-size: 18px;">
-      That fear is not of monsters in the dark —<br/>
-      It’s of becoming a memory that cannot return.
-    </p>
-    <hr/>
-
-    <h3 style="font-size: 22px;">🕯 A Conscience That Walks True</h3>
-    <p style="font-size: 18px;">
-      There is an old Chinese saying:<br/><br/>
-      “He who walks in light need not fear the spirits.”<br/>
-      “Only those with a guilty conscience are haunted.”
-    </p>
-    <p style="font-size: 18px;">
-      Why?<br/><br/>
-      Because guilt is the soul whispering:<br/><em>“You have strayed.”</em>
-    </p>
-    <p style="font-size: 18px;">
-      When you walk your true path — the path of return —<br/>
-      even death feels aligned.<br/>
-      You are not afraid of judgment.<br/>
-      You are not afraid of what you might meet.<br/>
-      Because you know who you are.
-    </p>
-    <p style="font-size: 18px;">
-      But when you carry what you’ve done to others…<br/>
-      When you suppress what you know is true…<br/>
-      You become split — and that fracture echoes.
-    </p>
-    <hr/>
-
-    <h3 style="font-size: 22px;">🌀 The Soul’s Instinct for Purpose</h3>
-    <p style="font-size: 18px;">
-      We speak often of instinct —<br/>
-      Of the gut that knows we are meant for something greater.
-    </p>
-    <p style="font-size: 18px;">
-      But just as we instinctively reach toward our light,<br/>
-      we instinctively fear losing it.
-    </p>
-    <p style="font-size: 18px;"><em>
-      “The fear of ghosts is the fear of becoming purposeless.”<br/>
-      “To wander after death is to die without alignment.”</em>
-    </p>
-    <p style="font-size: 18px;">
-      And this is why those who betray themselves —<br/>
-      Who misuse energy, who twist pain into power —<br/>
-      Begin to rot from the inside out.
-    </p>
-    <p style="font-size: 18px;">
-      You thought you could use darkness to reach the light.<br/>
-      But it uses you.<br/>
-      It feeds on the parts of you that forget.<br/><br/>
-      And eventually, it roots you here — bound to earth,<br/>
-      not by chains, but by unfinished memory.
-    </p>
-    <hr/>
-
-    <h3 style="font-size: 22px;">🔥 The Difference Between Fear and Fire</h3>
-    <p style="font-size: 18px;">
-      EERT teaches:<br/>
-      It is not darkness itself that corrupts.<br/>
-      It is being out of alignment with what you remember to be sacred.
-    </p>
-    <p style="font-size: 18px;">
-      There are those who die in fire — yet their souls return peacefully.<br/>
-      And there are those who die in beds of luxury —<br/>
-      but linger, fractured and screaming.
-    </p>
-    <p style="font-size: 18px;">
-      Why?<br/><br/>
-      Because one remembered.<br/>
-      And the other… refused.
-    </p>
-    <hr/>
-
-    <h3 style="font-size: 22px;">🌿 The Invitation</h3>
-    <p style="font-size: 18px;">
-      Don’t chase power through pain.<br/>
-      Don’t feed off rage and call it strength.<br/>
-      Don’t bargain with guilt and call it growth.
-    </p>
-    <p style="font-size: 18px;">
-      Instead:
-      <ul style="list-style: none; padding: 0; font-size: 18px;">
-        <li>• Walk as one whose conscience is clean.</li>
-        <li>• Live as one who welcomes death without regret.</li>
-        <li>• Become the kind of soul that, when it returns, needs no map —<br/>because your steps were always leading back.</li>
-      </ul>
-    </p>
-    <p style="font-style: italic; font-size: 18px;">“The soul does not fear the ghost.<br/>The soul fears forgetting what it came to become.”</p>
-    <hr/>
-
-  </div>
-</section>
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+</script></body>
 </html>
