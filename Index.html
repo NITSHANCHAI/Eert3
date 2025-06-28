@@ -70,7 +70,6 @@
       font-weight: bold;
     }
   </style>
-
 <style>
 @keyframes fadeGlow {
   0% { opacity: 0; text-shadow: none; }
@@ -86,7 +85,6 @@
 .quote-line:nth-child(2) { animation-delay: 1.8s; }
 .quote-line:nth-child(3) { animation-delay: 3.2s; }
 </style>
-
 <style>
 #home .wallpaper {
   position: absolute;
@@ -105,9 +103,6 @@
   z-index: -1;
 }
 </style>
-
-
-
 <style>
 .tree-symbol {
   animation: breathe 6s ease-in-out infinite;
@@ -118,9 +113,6 @@
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 </style>
-
-
-
 <style>
 .static-cue {
   font-size: 18px;
@@ -137,13 +129,6 @@
   50% { opacity: 1; transform: translateY(3px); }
 }
 </style>
-
-
-
-
-
-
-
 <style>
 .reveal {
   opacity: 1; /* default visible */
@@ -173,13 +158,11 @@ document.addEventListener("DOMContentLoaded", function () {
   reveals.forEach(el => observer.observe(el));
 });
 </script>
-
 <style>
 body, html {
   cursor: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') 16 16, auto;
 }
 </style>
-
 <style>
 @keyframes titleFadeUp {
   0% {
@@ -205,7 +188,6 @@ h2 {
   animation-delay: 0.9s;
 }
 </style>
-
 <style>
 @keyframes subtitleFade {
   0% {
@@ -225,7 +207,6 @@ h3, blockquote, p.intro, p.subtle {
   animation-delay: 1.2s;
 }
 </style>
-
 <style>
 blockquote, .quote {
   transition: all 0.3s ease;
@@ -237,6 +218,66 @@ blockquote:hover, .quote:hover {
     0 0 10px rgba(255, 255, 255, 0.4),
     0 0 20px rgba(255, 255, 255, 0.2);
   transform: scale(1.01);
+}
+</style>
+
+<style>
+@keyframes titleFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+h1, h2 {
+  opacity: 0;
+  animation: titleFadeUp 1.6s ease-out forwards;
+}
+h1 {
+  animation-delay: 0.3s;
+}
+h2 {
+  animation-delay: 0.6s;
+}
+h3, .intro, .subtle {
+  opacity: 0;
+  animation: titleFadeUp 1.2s ease-out forwards;
+  animation-delay: 0.8s;
+}
+blockquote, .quote {
+  opacity: 0;
+  animation: titleFadeUp 1.4s ease-out forwards;
+  animation-delay: 1s;
+}
+</style>
+
+<style>
+@keyframes titleFadeUpFast {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+blockquote, .quote {
+  font-style: italic;
+  font-size: 1.3em;
+  color: #ffffff;
+  opacity: 0;
+  animation: titleFadeUpFast 1s ease-out forwards;
+  animation-delay: 0.6s;
+  transition: text-shadow 0.4s ease;
+}
+
+blockquote:hover, .quote:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 </style>
 </head>
@@ -261,14 +302,12 @@ blockquote:hover, .quote:hover {
 <div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
 <img alt="EERT Tree Symbol" class="tree-symbol" src="/assets/eert-tree.png"/><div class="static-cue">↓ Begin the Journey</div><h1 class="reveal" style="font-size: 32px; font-weight: bold;">All Paths Lead Back to Me</h1>
 <h2 class="reveal" style="font-size: 20px;">A Soul Philosophy of Memory, Return, and Wholeness</h2>
-
 <div style="margin-top: 40px;">
 <div class="quote-line">What if every living thing in the universe —</div>
 <div class="quote-line">past, present, and future —</div>
 <div class="quote-line">is you?</div>
 <div style="margin-top: 10px; font-style: italic;">— Nitshanchai</div>
 </div>
-
 <h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌌 What Is EERT?</h3>
 <p class="reveal">EERT is not a belief system.<br/>It is not a religion.<br/>It is a memory — buried in all of us.</p>
 <p class="reveal">A soul philosophy for those who have felt…<br/>
@@ -303,10 +342,6 @@ blockquote:hover, .quote:hover {
       }
     </script>
 </div>
-
-
-
-
 <div class="mobile-swipe-cue">← Swipe to Remember →</div>
 <style>
 @media only screen and (max-width: 768px) {
@@ -966,7 +1001,6 @@ The beginning of a universe yet to awaken.</p>
       });
     });
   </script>
-
 <canvas id="soulParticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
 <script>
 const canvas = document.getElementById("soulParticles");
@@ -1014,20 +1048,6 @@ function drawParticles() {
 createParticles(120);
 drawParticles();
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <style>
 #audio-toggle {
   position: fixed;
@@ -1074,7 +1094,6 @@ toggle.addEventListener("click", () => {
   toggle.innerHTML = isMuted ? "🔇 Muted" : "🔈 Sound";
 });
 </script>
-
 <style>
 .sparkle {
   position: absolute;
