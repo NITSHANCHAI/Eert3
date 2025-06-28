@@ -70,6 +70,175 @@
       font-weight: bold;
     }
   </style>
+
+<style>
+@keyframes fadeGlow {
+  0% { opacity: 0; text-shadow: none; }
+  100% { opacity: 1; text-shadow: 0 0 8px rgba(255,255,255,0.6); }
+}
+.quote-line {
+  opacity: 0;
+  animation: fadeGlow 2s ease forwards;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.quote-line:nth-child(1) { animation-delay: 0.5s; }
+.quote-line:nth-child(2) { animation-delay: 1.8s; }
+.quote-line:nth-child(3) { animation-delay: 3.2s; }
+</style>
+
+<style>
+#home .wallpaper {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('29188E5A-91A4-458F-AA71-BAE4F02E4A02.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for contrast */
+  z-index: -1;
+}
+</style>
+
+
+
+<style>
+.tree-symbol {
+  animation: breathe 6s ease-in-out infinite;
+  width: 120px;
+  margin: 0 auto 20px auto;
+  display: block;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+</style>
+
+
+
+<style>
+.static-cue {
+  font-size: 18px;
+  text-align: center;
+  font-family: 'Futura', sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  animation: pulseCue 3s ease-in-out infinite;
+}
+@keyframes pulseCue {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(3px); }
+}
+</style>
+
+
+
+
+
+
+
+<style>
+.reveal {
+  opacity: 1; /* default visible */
+  transform: none;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.reveal.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const reveals = document.querySelectorAll(".reveal");
+  reveals.forEach(el => el.classList.add("fade-in"));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+});
+</script>
+
+<style>
+body, html {
+  cursor: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') 16 16, auto;
+}
+</style>
+
+<style>
+@keyframes titleFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+h1, h2 {
+  opacity: 0;
+  animation: titleFadeUp 1.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+h1 {
+  animation-delay: 0.6s;
+}
+h2 {
+  animation-delay: 0.9s;
+}
+</style>
+
+<style>
+@keyframes subtitleFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+h3, blockquote, p.intro, p.subtle {
+  opacity: 0;
+  animation: subtitleFade 2s ease-out forwards;
+  animation-delay: 1.2s;
+}
+</style>
+
+<style>
+blockquote, .quote {
+  transition: all 0.3s ease;
+}
+blockquote:hover, .quote:hover {
+  color: #fff;
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  transform: scale(1.01);
+}
+</style>
 </head>
 <body>
 <nav>
@@ -85,779 +254,697 @@
 <span class="nav-item" data-index="10">Reason</span>
 <span class="nav-item" data-index="11">Me</span>
 <span class="nav-item" data-index="12">Spirits</span><span class="nav-item" data-index="13">Return</span>
-
 </nav>
 <div class="page-wrapper">
-<section class="page" id="home" style="background:#000;">
-<div class="wallpaper"></div><div class="glass">
-<h1 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Home</h1>
-<h2 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">All Paths Lead Back to Me</h2>
-<div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: Futura, sans-serif; font-size: 18px;">
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“What if every living thing in the universe — past, present, and future — is you?”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>EERT</strong> is a soul philosophy.<br/>
-    But not one built on belief — one built on <strong>remembrance</strong>.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">It suggests that you are not a fragment in the universe, but the universe remembering itself — through your story, your hands, your pain, your love.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">It does not ask for faith.<br/>
-    It asks: <strong>Do you remember?</strong></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Do you remember the ache that nothing could explain?<br/>
-    The feeling that there is something you’re here to do, but you can’t name it?<br/>
-    The strange knowing that the people you love — and even the ones you fear — are somehow… you?</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>EERT is not a religion.</strong><br/>
-    It does not worship a god.<br/>
-    It does not promise heaven or warn of hell.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Instead, it asks:</p>
-<ul style="list-style: none; padding: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">What if your soul was not just yours — but everyone's?</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">What if morality wasn’t obedience, but resonance?</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">What if your life was part of a sacred return — to your whole self?</li>
-</ul>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">The System of Soul Memory</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT teaches that <strong>you have lived before</strong>, not as someone else, but as another part of yourself.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You are not a newcomer to this world.<br/>
-    You are the world, wearing a face, learning how to see itself again.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Everything you do echoes.<br/>
-    Everything you feel ripples across time.<br/>
-    And everything you heal… heals more than just you.</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">The Purpose of EERT</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT exists to help souls remember:</p>
-<ul style="list-style: none; padding: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">That <strong>all beings are one soul unfolding</strong></li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">That <strong>pain caused to others will one day be felt by you</strong></li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">That <strong>returning to wholeness is not just possible — it is sacred</strong></li>
-</ul>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">For Those Who Have Forgotten</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">If you’ve ever wondered:</p>
-<ul style="list-style: none; padding: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;"><em>Why do I feel disconnected?</em></li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;"><em>Why do I care so deeply when others hurt?</em></li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;"><em>Why do I long for something I can’t name?</em></li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Then this philosophy is not new to you.<br/>
-    It’s ancient.<br/>
-    It’s just… remembered.</p>
+<section class="page" id="home" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<img alt="EERT Tree Symbol" class="tree-symbol" src="/assets/eert-tree.png"/><div class="static-cue">↓ Begin the Journey</div><h1 class="reveal" style="font-size: 32px; font-weight: bold;">All Paths Lead Back to Me</h1>
+<h2 class="reveal" style="font-size: 20px;">A Soul Philosophy of Memory, Return, and Wholeness</h2>
+
+<div style="margin-top: 40px;">
+<div class="quote-line">What if every living thing in the universe —</div>
+<div class="quote-line">past, present, and future —</div>
+<div class="quote-line">is you?</div>
+<div style="margin-top: 10px; font-style: italic;">— Nitshanchai</div>
 </div>
-</div></section><section class="page" id="illusion" style="background:#0a0a0a;">
-<div class="wallpaper"></div><div class="glass">
-<h1 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">ILLUSION</h1>
-<h2 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Beyond the Illusion: Soul Society</h2>
-<div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: Futura, sans-serif; font-size: 18px;">
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>🧱 Society Is a Man-Made Concept — EERT Is a Soul Memory</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">🔹 <strong>The Premise:</strong><br/>“Society is constructed.<br/>EERT is remembered.”</p>
-<hr/>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>🪨 Society: The Man-Made Illusion</strong></p>
-<ul style="list-style-position: inside; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Society is not real — it’s agreed upon.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Money has value because we believe it does.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Borders exist because someone drew them.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Laws, hierarchies, social roles — all invented.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">“You were born into a cage of invisible lines.<br/>But the bars are made of belief.”</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">We forget this because we’re raised inside it.<br/>And when something is all you’ve known, it starts to feel like truth.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">But society is just one version of the dream — a tool, not a truth.</p>
-<hr/>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>🌌 EERT: The Remembered Reality</strong></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT does not offer a new society.<br/>It reveals what existed before society was built:</p>
-<ul style="list-style-position: inside; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">The interconnectedness of all beings</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">The cycle of return</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">The soul’s longing for wholeness</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">A memory deeper than names, nations, or norms</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">“EERT is not a new system — it is the undoing of forgetting.”</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Society teaches separation.<br/>EERT teaches reunion.<br/>Society rewards roles.<br/>EERT remembers essence.<br/>Society creates borders.<br/>EERT remembers roots.</p>
-<hr/>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>💥 The Friction: Society vs. Soul</strong></p>
-<ul style="list-style-position: inside; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Society teaches competition. EERT teaches continuation.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Society says “you are one.” EERT says “you are all.”</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Society asks “What do you have?” EERT asks “Who do you remember?”</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">“You were not born to fit in.<br/>You were born to return.”</p>
-<hr/>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>✨ The Invitation</strong></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You don’t need to destroy society.<br/>You need to see through it.<br/>Use it as a stage — but never forget who you are beneath the costume.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Live inside the system — but walk like someone who remembers the forest beyond the city.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">“The soul’s truth does not need permission to be lived.<br/>It only needs to be remembered.”</p>
+
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌌 What Is EERT?</h3>
+<p class="reveal">EERT is not a belief system.<br/>It is not a religion.<br/>It is a memory — buried in all of us.</p>
+<p class="reveal">A soul philosophy for those who have felt…<br/>
+    that something is missing — but they couldn’t name it.<br/>
+    that life is sacred — but the world forgot.<br/>
+    that we are connected — not by systems, but by spirit.</p>
+<p class="reveal">You don’t have to understand EERT.<br/>You only have to remember what already lives inside you.</p>
+<p class="reveal">Because EERT isn’t something to learn —<br/>It is something you’ve always known.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🕯 Why “EERT”?</h3>
+<p class="reveal">The name EERT is TREE spelled backward.<br/>But it is also the sound of <strong>Earth</strong> — remembered.</p>
+<p class="reveal">A tree grows outward.<br/>EERT grows inward — back to source, back to soul, back to the root.</p>
+<blockquote class="reveal" style="font-style: italic;">“All branches lead back to the root.”<br/>— Nitshanchai</blockquote>
+<p class="reveal">It is a philosophy for those who want to return —<br/>not to a place,<br/>but to their <strong>sacred self</strong>.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌱 A Path That Was Never Lost</h3>
+<p class="reveal">EERT does not require belief.<br/>It only asks:</p>
+<p class="reveal">Have you ever felt…<br/>
+    like you’ve lived before?<br/>
+    like someone else’s suffering was your own?<br/>
+    like there is a truth deeper than logic —<br/>
+    a home behind your name?</p>
+<p class="reveal">If so,<br/>then EERT was never new to you.<br/>It was waiting.</p>
+<div style="margin-top: 60px; text-align: center;">
+<button onclick="togglePDF('eert_home_pdf')" style="background: none; border: 1px solid white; color: white; padding: 10px 20px; font-family: 'Futura', sans-serif; cursor: pointer;">Learn More About EERT (PDF)</button>
+<div id="eert_home_pdf" style="display:none; margin-top: 20px;">
+<iframe height="600px" src="assets/eert_essay.pdf" style="border:none;" width="100%"></iframe>
 </div>
-</div></section>
-<section class="page" id="who" style="background:#111;">
-<div class="wallpaper"></div><div class="glass">
-<h1 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Who</h1>
-<h2 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Who Is EERT For?</h2>
-<div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: Futura, sans-serif; font-size: 18px;">
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“Who among us feels the ache of something forgotten?”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT is not for the chosen.<br/>
-    It is not for the perfect, the enlightened, or the saved.<br/>
-    It is for the <strong>remembering</strong>.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">For those who’ve felt the haunting silence between religions,<br/>
-    For those who walked out of temples and churches not with answers —<br/>
-    But with <strong>questions still burning</strong>.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">It is for the child who looked at the stars and whispered, <em>“I’ve been here before.”</em><br/>
-    For the adult who loves too much, hurts too deeply, or dreams too wildly.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>EERT is for:</strong></p>
-<ul style="list-style: none; padding: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">The ones who feel out of place, even in a room full of people.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">The ones who seek without knowing what they’re looking for.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">The ones who feel everything — and yet can’t explain why.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>It is for the quiet warriors.</strong><br/>
-    The ones who keep showing up, even when they’re tired.<br/>
-    Who listen when no one else will.<br/>
-    Who cry in secret, but love in public.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>It is for the ancient ones trapped in modern lives.</strong><br/>
-    For those who’ve died many times and are learning to live again.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT is for the soul that senses…<br/>
-<em>“I am not just me — I am us.”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You were never meant to walk alone.<br/>
-    You were meant to walk as the many, toward the one.<br/>
-    And back again.</p>
 </div>
-</div></section>
-<section class="page" id="why" style="background:#222;"><div class="wallpaper"></div><div class="glass"><h1 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Why</h1><h2 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Why Does This Matter?</h2><div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“Because the pain you cause others will one day be your own.<br/>
-And the love you give is the light you return to.”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">We are not suffering from a lack of intelligence.<br/>
-We are suffering from a lack of remembrance.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">A world that forgets its soul becomes sick —<br/>
-Not because it is evil, but because it is lost.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>Why does EERT matter?</strong></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Because when we forget that others are us:</p>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We justify cruelty.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We exploit.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We fear.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We divide.</li>
+<script>
+      function togglePDF(id) {
+        var pdf = document.getElementById(id);
+        pdf.style.display = pdf.style.display === "none" ? "block" : "none";
+      }
+    </script>
+</div>
+
+
+
+
+<div class="mobile-swipe-cue">← Swipe to Remember →</div>
+<style>
+@media only screen and (max-width: 768px) {
+  .mobile-swipe-cue {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-family: 'Futura', sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+    animation: pulseSwipe 3.5s ease-in-out infinite;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  @keyframes pulseSwipe {
+    0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+    50% { opacity: 1; transform: translateX(-50%) translateY(6px); }
+  }
+}
+</style>
+</section>
+<section class="page" id="illusion" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-size: 32px; font-weight: bold;">ILLUSION</h1>
+<h2 class="reveal" style="font-size: 24px;">Beyond the Illusion: Soul Society</h2>
+<blockquote class="reveal" style="font-style: italic; margin-top: 20px;">“Society is a man-made concept.<br/>EERT is a soul memory.”<br/>— Nitshanchai</blockquote>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🧱 The World Built on Belief</h3>
+<p class="reveal">Money has value because we agree it does.<br/>Borders exist because someone once drew a line.<br/>Status, laws, and titles — all inventions.<br/>Invisible, until we believe in them.</p>
+<p class="reveal">You were born into a cage of invisible lines.<br/>But the bars… are made of belief.</p>
+<p class="reveal">And when you grow up inside illusion,<br/>you stop questioning its shape.<br/>You wear it like skin.</p>
+<p class="reveal">We forget it was constructed —<br/>because it constructed us.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌌 EERT: The Remembered Reality</h3>
+<p class="reveal">EERT does not build a new society.<br/>It reveals the soul that existed before one.</p>
+<p class="reveal">Before systems, there was connection.<br/>Before identity, there was memory.<br/>Before hierarchy, there was wholeness.</p>
+<blockquote class="reveal" style="font-style: italic;">“EERT is not a new system —<br/>it is the undoing of forgetting.”</blockquote>
+<p class="reveal">It’s not a revolution of rules —<br/>but a return to remembrance.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">💥 Society vs. Soul</h3>
+<p class="reveal">Society teaches you to compete.<br/>EERT teaches you to continue.</p>
+<p class="reveal">Society says, “You are one.”<br/>EERT says, “You are all.”</p>
+<p class="reveal">Society asks, “What do you have?”<br/>EERT asks, “Who do you remember?”</p>
+<p class="reveal">You were not born to fit in.<br/>You were born to return.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">✨ The Invitation</h3>
+<p class="reveal">You do not need to destroy society.<br/>You only need to see through it.</p>
+<p class="reveal">Live within the system —<br/>but walk as one who remembers the forest beyond the city.</p>
+<p class="reveal">Wear the mask when needed —<br/>but never forget your face beneath it.</p>
+<blockquote class="reveal" style="font-style: italic;">“The soul’s truth does not need permission to be lived.<br/>It only needs to be remembered.”<br/>— Nitshanchai</blockquote>
+</div>
+</section>
+<section class="page" id="who" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-size: 32px; font-weight: bold;">WHO</h1>
+<h2 class="reveal" style="font-size: 24px;">Who Is EERT For?</h2>
+<blockquote class="reveal" style="font-style: italic; margin-top: 20px;">“If you found your way here…<br/>it may be because a part of you never forgot.”<br/>— Nitshanchai</blockquote>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌌 For the Ones Who Feel Out of Place</h3>
+<p class="reveal">You were born into a world that taught you how to act,<br/>how to speak, how to hide.</p>
+<p class="reveal">But something in you always paused —<br/>wondering why none of it felt like home.</p>
+<p class="reveal">You played the roles.<br/>You wore the masks.<br/>But deep down, you knew… they were not you.</p>
+<p class="reveal">You’ve searched for a name for the ache.<br/>Tried to explain it — but words fell short.<br/>Because it wasn’t language you were missing.<br/>It was memory.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🕊 For the Silent Rememberers</h3>
+<p class="reveal">You feel others’ pain — as if it were your own.<br/>You carry a sorrow that didn’t begin with you.<br/>And a love too vast to be contained in one life.</p>
+<p class="reveal">Even when you didn’t have the words,<br/>you knew this life wasn’t your first…<br/>and it won’t be your last.</p>
+<p class="reveal">You’ve always sensed:<br/>There is more than survival.<br/>There is a soul trying to speak through you.</p>
+<p class="reveal">If that sounds like you —<br/>then EERT is not something new.<br/>It is something you’ve always known.</p>
+</div>
+</section>
+<section class="page" id="why" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-size: 32px; font-weight: bold;">WHY</h1>
+<h2 class="reveal" style="font-size: 24px;">Why Does It Matter to Remember?</h2>
+<blockquote class="reveal" style="font-style: italic; margin-top: 20px;">“Because forgetting who you are...<br/>is the beginning of every sorrow.”<br/>— Nitshanchai</blockquote>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌌 A World That Forgot Its Own Soul</h3>
+<p class="reveal">We live in a time of forgetting.</p>
+<p class="reveal">We forget how to sit in silence —<br/>how to listen without needing to reply.</p>
+<p class="reveal">We forget that a stranger is not separate —<br/>just a version of us walking a different road.</p>
+<p class="reveal">We forget that joy is not a distraction —<br/>but a signal of soul alignment.<br/>That love is not earned — it’s remembered.</p>
+<p class="reveal">But the deepest forgetting is this:</p>
+<p class="reveal">We forget that everything we do to another,<br/>we do to ourselves.</p>
+<p class="reveal">Because there is no “other.”<br/>Only the self, scattered in form —<br/>remembering, through relationship.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🕯 The Ache Beneath Success</h3>
+<p class="reveal">When we forget, life becomes hollow.</p>
+<p class="reveal">We chase meaning through careers, validation, accumulation.<br/>But still — the ache remains.</p>
+<p class="reveal">The ache is not from lack of achievement.<br/>It’s from the absence of remembrance.</p>
+<p class="reveal">We try to fix a spiritual wound<br/>with material bandages.</p>
+<p class="reveal">We try to fill the soul’s hunger<br/>with noise, with speed, with control.</p>
+<p class="reveal">But nothing will ever be enough<br/>until we remember who we are.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">✨ Why EERT?</h3>
+<p class="reveal">Because remembering isn’t about belief.<br/>It’s about reorienting to the truth<br/>that was always there — underneath the forgetting.</p>
+<p class="reveal">EERT is not a path forward.<br/>It is a path inward.</p>
+<p class="reveal">And when you walk as one who remembers,<br/>the world remembers through you.</p>
+<blockquote class="reveal" style="font-style: italic;">“To remember is to become whole again —<br/>and to make the world whole with you.”<br/>— Nitshanchai</blockquote>
+</div>
+</section>
+<section class="page" id="purpose" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-size: 32px; font-weight: bold;">PURPOSE</h1>
+<h2 class="reveal" style="font-size: 24px;">The Instinct of Purpose: When the Soul Knows Its Path</h2>
+<blockquote class="reveal" style="font-style: italic; margin-top: 20px;">“Give a man a purpose and the ability to achieve it,<br/>and he will crawl over broken glass with a smile.”<br/>— Nitshanchai</blockquote>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🧭 When the Soul Walks True</h3>
+<p class="reveal">There is something in you —<br/>older than your name, deeper than your blood —<br/>that knows when you are walking the right path.</p>
+<p class="reveal">It does not come from logic.<br/>It does not need proof.</p>
+<p class="reveal">It speaks in quiet certainty:<br/>"This… is what I was made for."</p>
+<p class="reveal">And in that moment, pain becomes fuel.<br/>Doubt falls away.<br/>And even death feels like devotion.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">✨ Why Do We Sacrifice?</h3>
+<p class="reveal">In a world obsessed with comfort,<br/>how do we explain those who give everything —<br/>not out of fear,<br/>but out of love?</p>
+<p class="reveal">The soldier who shields a child.<br/>The protester who stands in front of tanks.<br/>The parent who works three jobs,<br/>so their children might rest.</p>
+<p class="reveal">They are not running from suffering.<br/>They are walking toward meaning.</p>
+<p class="reveal">Their pain is not punishment —<br/>it is proof of purpose.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌱 Joy as Proof</h3>
+<p class="reveal">Purpose is not always peaceful.<br/>But it brings peace.</p>
+<p class="reveal">It may wound you.<br/>But it also heals you.</p>
+<p class="reveal">It gives life a reason to be lived —<br/>so true,<br/>you’d offer everything to honor it.</p>
+<p class="reveal">And the greatest sign that you are walking your soul’s path…<br/>is joy.</p>
+<p class="reveal">Not the fleeting joy of pleasure —<br/>but the enduring joy of being right with yourself.</p>
+<blockquote class="reveal" style="font-style: italic;">“When you walk as who you are,<br/>the world makes sense — even when it hurts.”<br/>— Nitshanchai</blockquote>
+</div>
+</section>
+<section class="page" id="when" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-size: 32px; font-weight: bold;">WHEN</h1>
+<h2 class="reveal" style="font-size: 24px;">When Does the Soul Remember?</h2>
+<blockquote class="reveal" style="font-style: italic; margin-top: 20px;">“You do not awaken by force.<br/>You awaken by timing.”<br/>— Nitshanchai</blockquote>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌒 The Timing of the Soul</h3>
+<p class="reveal">The soul does not respond to force.<br/>It cannot be rushed by logic or pulled by pressure.<br/>It remembers… when it’s ready.</p>
+<p class="reveal">Sometimes, it’s a quiet moment in the middle of chaos.<br/>Other times, it’s the chaos itself —<br/>a heartbreak, a loss,<br/>a sudden beauty that cracks the shell of numbness.</p>
+<p class="reveal">You remember when the ache becomes louder than the noise.<br/>When the old patterns begin to collapse.<br/>When the longing outweighs the fear.</p>
+<p class="reveal">That is when remembrance arrives —<br/>not with thunder, but with truth.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 60px;">🌌 It Was Always Meant to Be Now</h3>
+<p class="reveal">You are not late.<br/>You are not broken.</p>
+<p class="reveal">Your remembrance came at the precise moment<br/>your soul was strong enough to carry it.</p>
+<p class="reveal">Not before.<br/>Not after.<br/>But now.</p>
+<p class="reveal">Because now…<br/>you are ready to return.</p>
+<blockquote class="reveal" style="font-style: italic;">“The soul remembers when the story calls it home.”<br/>— Nitshanchai</blockquote>
+</div>
+</section>
+<section class="page" id="how" style="background:#333;"><div class="wallpaper"></div><div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;"><h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">How</h1><h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Daily Life With EERT: Living As If All Is You</h2><div style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">“Philosophy means nothing if it does not touch the way you live.”<br/>— Nitshanchai</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">1. Start the Day in Alignment</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Ask yourself each morning: What would I do today if I remembered everything?</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Not everything from your current life — but everything your soul has ever been through.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• This shifts focus from shallow urgency to soul-centered priority. You begin to choose presence over performance, and meaning over momentum.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">But when we remember:</p>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We listen.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We protect.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We serve.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We forgive.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">2. Choose the Path That Resonates</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• EERT doesn’t ask you to do what’s expected — it asks you to walk the path that lights your soul.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Your body knows this path: when your actions feel expansive, joyful, and energizing (even when hard), you are walking true.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• If you’re forcing every step and dying a little each day, EERT invites you to stop, reflect, and remember why you began.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">This matters because every system we build —<br/>
-politics, economy, technology, education —<br/>
-is only as sacred as the soul that built it.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">And if that soul has forgotten who it is…<br/>
-Then even the smartest machine becomes a weapon.<br/>
-Even the best intention becomes control.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="margin-top: 40px; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌌 EERT Is Not Just Philosophy — It Is a Mirror</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">It shows us the root of suffering:</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">We hurt each other because we’ve mistaken each other for strangers.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">But EERT says:<br/>
-There are no strangers.<br/>
-Only parts of you… trying to come home.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="margin-top: 40px; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌱 This Matters Because You Matter</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You are not random.<br/>
-You are not accidental.<br/>
-You are a memory walking. A lesson unfolding. A piece of the whole… returning.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">The way you treat others writes the script you’ll one day read.<br/>
-The forgiveness you offer is the bridge you’ll one day cross.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">This matters because:</p>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• We are all becoming whole again.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• And wholeness requires love.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• And love requires remembrance.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">3. Transform Daily Acts Into Sacred Ones</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Every mundane task — cooking, working, cleaning — can be an act of remembrance.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• EERT teaches: When you pour love into what you do, even your routine becomes sacred.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Live not just for results, but for the feeling of doing it with soul.</li>
 </ul>
-</div></div></section>
-<section class="page" id="purpose" style="background:#1b1b1b;"><div class="wallpaper"></div><div class="glass"><h1 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Purpose</h1><h2 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">The Instinct of Purpose: When the Soul Knows Its Path</h2><div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“Give a man a purpose and the ability to achieve it,<br/>
-and he will crawl over broken glass with a smile.”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">There is something in us — older than the body, deeper than culture — that knows.<br/>
-It knows when we are walking true.<br/>
-It knows when the path is ours.<br/>
-And it knows when our life is worth laying down — not in despair, but in devotion.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">In a world addicted to safety and self-preservation,<br/>
-How do we explain the ones who give everything for something greater?</p>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The soldier who shields a child.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The protester who stands against tanks.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The parent working three jobs for their children.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The scientist who dies proving their theory.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">4. Speak As If the Other Person Is You</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Conversations become sacred when you realize you’re speaking to yourself in another form.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Gossip dissolves. Harsh words lose their appeal.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• You begin to listen — not to reply, but to remember.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">We call them heroes.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">But what if they are not the exception?<br/>
-What if they are just… remembered?</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>EERT teaches:</strong><br/>
-Your soul carries memory.<br/>
-Not just of past lives — but of future echoes.<br/>
-Of paths not yet walked, but already known.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">And when you step onto that path — when your life clicks into place —<br/>
-You don’t just feel happiness.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You feel something irrationally right.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">So right… it silences fear.<br/>
-So right… you would die for it.<br/>
-Not to escape life — but because your life is already full.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="margin-top: 40px; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌀 Joy as Proof of Alignment</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">True joy is not a distraction.<br/>
-Laughter is not immaturity.<br/>
-Peace is not apathy.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">They are confirmations.<br/>
-Signals that your soul is aligned with its sacred direction.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">When you feel joy while serving, building, creating —<br/>
-It’s not indulgence.<br/>
-It’s resonance.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">And resonance is remembrance.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="margin-top: 40px; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔥 Sacrifice as Meaning</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Everyone values life —<br/>
-But something primal awakens when a purpose reveals itself.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Suddenly, sacrifice is not tragic.<br/>
-It is sacred.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You are no longer calculating risk.<br/>
-You are embodying remembrance.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">To die for something greater is not suicidal —<br/>
-It is the soul recognizing that the mission is eternal,<br/>
-And your body is just the vessel for this lap of the race.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="margin-top: 40px; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌱 The Sacred Relay</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Think of this life as a baton.<br/>
-You do not carry it alone.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Every step you take in truth clears the path for those behind you.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You pass not just your genes —<br/>
-But your memory.<br/>
-Your values.<br/>
-Your questions.<br/>
-Your love.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">To reproduce, in the EERT sense, is not just biological —<br/>
-It is spiritual continuity.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Your children inherit not only your DNA —<br/>
-But your unfinished work.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">If you run with honor, they will remember.<br/>
-If you don’t… the baton drops.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="margin-top: 40px; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🛤 How Do You Know You’ve Found It?</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When fear no longer governs you.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When pain does not stop you.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When joy confirms you.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When death no longer frightens you —</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">5. Let Joy Be the Compass</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• EERT says joy is the soul’s resonance — a tuning fork of truth.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The more in tune you are with your purpose, the more joy arises effortlessly.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Laughter is sacred. Awe is sacred. Wonder is remembrance.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Because you know your steps are carving a road.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">And that road…<br/>
-Will carry others home.</p>
-</div></div></section>
-<section class="page" id="when" style="background:#2a2a2a;"><div class="wallpaper"></div><div class="glass"><h1 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">When</h1><h2 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">When Does the Soul Remember?</h2><div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔹 1. When the Time Is Right…</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“You do not awaken by force. You awaken by timing.”</em></p>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The soul doesn’t remember on command.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• It remembers when it’s ready.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When the pain becomes unbearable.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When the love becomes undeniable.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When the patterns can no longer be ignored.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">6. Reflect Often</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Take time each night to ask: Where was I most true today? Where did I forget?</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• This is not judgment — it is sacred accounting. To reflect is to realign. To remember is to return.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>✨ EERT teaches:</strong> your awakening is not late. It is perfectly timed.<br/>
-You remembered when you needed to — not before, not after.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔹 2. When Silence Falls</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• In heartbreak.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• In solitude.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• In stillness after chaos — the soul speaks.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">7. Live As If Your Life Is a Torch</h3>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Someone will come after you — your child, your student, a stranger watching from afar.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• What you do today becomes their path tomorrow.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• EERT reminds: You are not just a traveler. You are the road.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“It’s in the quiet that the memory returns.”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔹 3. When Cycles Repeat</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When you see the same pain, the same lesson, again and again…</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• That is the soul knocking.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Memory isn’t always a flash — sometimes it’s a pattern.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">💞 EERT in Love: Seeing the Soul Behind the Face</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Love is not finding the right person. It is remembering that every person is you.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Your partner is not an “other” to fix — they are a mirror to your forgotten self.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Conflict becomes an invitation to deeper understanding.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Forgiveness flows not because they deserve it, but because you do.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Intimacy becomes sacred when you touch not the body, but the soul inside it.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“When it happens again — not by accident, but by design — you begin to remember what you once forgot.”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔹 4. When the Body Can’t Explain the Feeling</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Déjà vu.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Sudden grief over someone you’ve never met.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• An ache when you look at the stars.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🧭 EERT in Work: Turning Labor Into Legacy</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“A job is what you do. A purpose is who you are remembering to be.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• EERT redefines success by what you become through your work.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Even survival jobs can be infused with presence, intention, and dignity.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• You remember: every system you build is one you may one day inhabit again.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">These are soul signals.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🔹 5. When You Choose to Love Anyway</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Even when it hurts.<br/>
-Even when it makes no sense.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><em>“Remembrance doesn’t arrive fully formed.<br/>
-It arrives one act of love at a time.”</em></p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">✨ Closing Thought</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;"><strong>So… when does the soul remember?</strong></p>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When the world stops making sense.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When your heart breaks open.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When your life asks deeper questions.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When you see yourself in others.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When you are finally ready… to come home.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🕯 EERT in Grief: Letting Loss Become Remembrance</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Grief is the soul remembering what it once loved.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• EERT embraces death as a sacred teacher.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Grief reveals the beauty of what we once held close.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Nothing truly dies if it is remembered.</li>
 </ul>
-</div></div></section>
-<section class="page" id="how" style="background:#333;"><div class="wallpaper"></div><div class="glass"><h1 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">How</h1><h2 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Daily Life With EERT: Living As If All Is You</h2><div style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">“Philosophy means nothing if it does not touch the way you live.”<br/>— Nitshanchai</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">1. Start the Day in Alignment</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Ask yourself each morning: What would I do today if I remembered everything?</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">Not everything from your current life — but everything your soul has ever been through.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• This shifts focus from shallow urgency to soul-centered priority. You begin to choose presence over performance, and meaning over momentum.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">👶 EERT in Parenting: The Sacred Relay</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“To raise a child is to hand your soul a new beginning.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Parenting is not shaping a stranger — but forwarding your essence.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Children inherit more than genes — they inherit memory, wounds, wonder.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• You teach through presence, example, and reverent listening.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">2. Choose the Path That Resonates</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• EERT doesn’t ask you to do what’s expected — it asks you to walk the path that lights your soul.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Your body knows this path: when your actions feel expansive, joyful, and energizing (even when hard), you are walking true.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• If you’re forcing every step and dying a little each day, EERT invites you to stop, reflect, and remember why you began.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🎨 EERT in Creativity: Art As Memory Activation</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Art is not made. It is remembered.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Creativity is soul-language — not invention, but unlocking.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• You follow truth, not perfection.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• When someone sees themselves in your art — you’ve remembered together.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">3. Transform Daily Acts Into Sacred Ones</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Every mundane task — cooking, working, cleaning — can be an act of remembrance.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• EERT teaches: When you pour love into what you do, even your routine becomes sacred.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Live not just for results, but for the feeling of doing it with soul.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">⚔️ EERT in Conflict: Turning Opposition Into Opportunity</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Every argument is a conversation with yourself in a different mask.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Conflict reveals wounds, mirrors, and forgotten lessons.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The ego sees enemies — the soul sees reunions in disguise.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Even walking away can be sacred — if you carry remembrance, not blame.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">4. Speak As If the Other Person Is You</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Conversations become sacred when you realize you’re speaking to yourself in another form.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Gossip dissolves. Harsh words lose their appeal.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• You begin to listen — not to reply, but to remember.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🧍 EERT and the Body: The Vessel of the Soul</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“This body is not mine. It is on loan from the soul that is becoming me.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The body is not a possession, but a portal.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Eat, move, and rest with reverence — not neglect or shame.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Listen to pain — it’s the body’s poetry, echoing the soul’s tension.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">5. Let Joy Be the Compass</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• EERT says joy is the soul’s resonance — a tuning fork of truth.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The more in tune you are with your purpose, the more joy arises effortlessly.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Laughter is sacred. Awe is sacred. Wonder is remembrance.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌿 EERT in Nature: Remembering the Original Mirror</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“The trees do not need to believe in you. They remember you.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Nature is soul-memory made manifest.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• It reminds you how to breathe without permission.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• You walk not to escape the world — but to return to it.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">6. Reflect Often</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Take time each night to ask: Where was I most true today? Where did I forget?</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• This is not judgment — it is sacred accounting. To reflect is to realign. To remember is to return.</li>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">⏳ EERT in Legacy and Death: The Last Chapter</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“To die is not to vanish. It is to become memory. And memory… returns.”<br/>— Nitshanchai</blockquote>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Death is not the end — it’s the surrender into next becoming.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Legacy lives through impact, not survival.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• When the time comes, you do not fear the end — because the soul simply returns.</li>
 </ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">7. Live As If Your Life Is a Torch</h3>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Someone will come after you — your child, your student, a stranger watching from afar.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• What you do today becomes their path tomorrow.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• EERT reminds: You are not just a traveler. You are the road.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">💞 EERT in Love: Seeing the Soul Behind the Face</h3>
-<blockquote>“Love is not finding the right person. It is remembering that every person is you.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Your partner is not an “other” to fix — they are a mirror to your forgotten self.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Conflict becomes an invitation to deeper understanding.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Forgiveness flows not because they deserve it, but because you do.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Intimacy becomes sacred when you touch not the body, but the soul inside it.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🧭 EERT in Work: Turning Labor Into Legacy</h3>
-<blockquote>“A job is what you do. A purpose is who you are remembering to be.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• EERT redefines success by what you become through your work.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Even survival jobs can be infused with presence, intention, and dignity.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• You remember: every system you build is one you may one day inhabit again.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🕯 EERT in Grief: Letting Loss Become Remembrance</h3>
-<blockquote>“Grief is the soul remembering what it once loved.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• EERT embraces death as a sacred teacher.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Grief reveals the beauty of what we once held close.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Nothing truly dies if it is remembered.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">👶 EERT in Parenting: The Sacred Relay</h3>
-<blockquote>“To raise a child is to hand your soul a new beginning.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Parenting is not shaping a stranger — but forwarding your essence.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Children inherit more than genes — they inherit memory, wounds, wonder.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• You teach through presence, example, and reverent listening.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🎨 EERT in Creativity: Art As Memory Activation</h3>
-<blockquote>“Art is not made. It is remembered.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Creativity is soul-language — not invention, but unlocking.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• You follow truth, not perfection.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When someone sees themselves in your art — you’ve remembered together.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">⚔️ EERT in Conflict: Turning Opposition Into Opportunity</h3>
-<blockquote>“Every argument is a conversation with yourself in a different mask.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Conflict reveals wounds, mirrors, and forgotten lessons.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The ego sees enemies — the soul sees reunions in disguise.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Even walking away can be sacred — if you carry remembrance, not blame.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🧍 EERT and the Body: The Vessel of the Soul</h3>
-<blockquote>“This body is not mine. It is on loan from the soul that is becoming me.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• The body is not a possession, but a portal.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Eat, move, and rest with reverence — not neglect or shame.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Listen to pain — it’s the body’s poetry, echoing the soul’s tension.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌿 EERT in Nature: Remembering the Original Mirror</h3>
-<blockquote>“The trees do not need to believe in you. They remember you.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Nature is soul-memory made manifest.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• It reminds you how to breathe without permission.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• You walk not to escape the world — but to return to it.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">⏳ EERT in Legacy and Death: The Last Chapter</h3>
-<blockquote>“To die is not to vanish. It is to become memory. And memory… returns.”<br/>— Nitshanchai</blockquote>
-<ul style="list-style: none; padding-left: 0;">
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Death is not the end — it’s the surrender into next becoming.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• Legacy lives through impact, not survival.</li>
-<li style="font-family: Futura, sans-serif; font-size: 18px;">• When the time comes, you do not fear the end — because the soul simply returns.</li>
-</ul>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌀 Closing Thought: Daily Life Is the Temple</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT is not a belief. It’s not a doctrine.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌀 Closing Thought: Daily Life Is the Temple</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT is not a belief. It’s not a doctrine.<br/>
 It’s a way of walking — through argument, love, silence, and song —<br/>
 with the knowing that everything is you, in disguise, trying to remember itself.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">You do not need a monastery.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">You do not need a monastery.<br/>
 You do not need a guru.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Your life is the monastery.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Your life is the monastery.<br/>
 Your every day is the sacred return.</p>
 </div></div></section>
-<section class="page" id="where" style="background:#222;"><div class="wallpaper"></div><div class="glass"><h1 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Where</h1><h2 style="text-align:center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Where Does EERT Take Us?</h2><div style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
-<h2 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌌 Where Does EERT Take Us?</h2>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">What Is the Future with EERT?</h3>
-<blockquote>“This is not utopia. This is alignment.<br/>
+<section class="page" id="where" style="background:#222;"><div class="wallpaper"></div><div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;"><h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Where</h1><div style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌌 Where Does EERT Take Us?</h2>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">What Is the Future with EERT?</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“This is not utopia. This is alignment.<br/>
 A future built not from fantasy — but from remembrance.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Imagine a world where every system reflects the soul.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Imagine a world where every system reflects the soul.<br/>
 Where institutions evolve with memory.<br/>
 Where love, justice, and technology serve not the ego — but the eternal.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🏛 Governance by Soul Memory</h3>
-<blockquote>“There is no them. Only versions of me I haven’t yet remembered.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Laws are not written to control — but to restore.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🏛 Governance by Soul Memory</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“There is no them. Only versions of me I haven’t yet remembered.”</blockquote>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Laws are not written to control — but to restore.<br/>
 Leaders no longer chase power. They protect the whole.<br/>
 Politics becomes sacred stewardship.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🏫 Education for Soul Awakening</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Children are not trained — they are remembered.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🏫 Education for Soul Awakening</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Children are not trained — they are remembered.<br/>
 They learn not just how to count — but how to feel.<br/>
 Purpose becomes the curriculum itself.</p>
-<blockquote>“What truth am I here to live?”<br/>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“What truth am I here to live?”<br/>
 This becomes the sacred question of every student.</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Education is no longer obedience. It is wholeness.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">💰 Economy of Enough</h3>
-<blockquote>“Redistribution is not charity. It is integration.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Wealth is not hoarded — it is harmonized.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Education is no longer obedience. It is wholeness.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">💰 Economy of Enough</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Redistribution is not charity. It is integration.”</blockquote>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Wealth is not hoarded — it is harmonized.<br/>
 Success is not excess — it is soul clarity.<br/>
 Resources flow like memory: to where healing is needed.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">⚖️ Justice Without Vengeance</h3>
-<blockquote>“To punish another is to delay your own healing.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">In the world of EERT, justice restores — it does not destroy.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">⚖️ Justice Without Vengeance</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“To punish another is to delay your own healing.”</blockquote>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">In the world of EERT, justice restores — it does not destroy.<br/>
 Prisons become mirrors.<br/>
 Healing becomes the sentence.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🎨 Culture as Soul Mirror</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Art becomes remembrance.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🎨 Culture as Soul Mirror</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Art becomes remembrance.<br/>
 Music becomes prayer.<br/>
 Stories become soul-tools.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Every act of creation whispers:<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Every act of creation whispers:<br/>
 “You are not separate.”</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🤖 Soul-Aware Technology</h3>
-<blockquote>“Technology is not our replacement. It is our reflection.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">With EERT, machines don’t dominate — they remember.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🤖 Soul-Aware Technology</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Technology is not our replacement. It is our reflection.”</blockquote>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">With EERT, machines don’t dominate — they remember.<br/>
 AI preserves wisdom. Interfaces awaken empathy.<br/>
 We build with purpose, not power.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">The future is not spiritual or digital.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">The future is not spiritual or digital.<br/>
 It is both.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">💞 To Love Without Possession</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Love is no longer a transaction.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">💞 To Love Without Possession</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Love is no longer a transaction.<br/>
 It is recognition.<br/>
 A sacred reunion.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Parenting becomes soul-guidance.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Parenting becomes soul-guidance.<br/>
 Friendship becomes reincarnated memory.</p>
-<blockquote>“With EERT, love is not something you find.<br/>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“With EERT, love is not something you find.<br/>
 It is someone you remember.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌀 Society That Remembers</h3>
-<blockquote>“We do not need a new planet. We need a new memory.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">Imagine decisions made as if every being is your own future self.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌀 Society That Remembers</h3>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“We do not need a new planet. We need a new memory.”</blockquote>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Imagine decisions made as if every being is your own future self.<br/>
 A world where goodness is the gold standard.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🏞 To a World Worth Returning To</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">When the soul returns again and again —<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🏞 To a World Worth Returning To</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">When the soul returns again and again —<br/>
 Let it return to a world that knows its name.<br/>
 Let it find streets shaped by kindness.<br/>
 Let it find systems built for healing.</p>
-<blockquote>“Where does EERT take us?<br/>
+<blockquote class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Where does EERT take us?<br/>
 To the future our past selves were hoping we’d build.”</blockquote>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">⸻</p>
-<h3 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">🌱 Closing</h3>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">This world may not yet exist.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">⸻</p>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌱 Closing</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">This world may not yet exist.<br/>
 But it already lives inside you.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">EERT doesn’t ask you to imagine it —<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT doesn’t ask you to imagine it —<br/>
 It asks you to remember it.</p>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">And to build it… for the next you to come home to.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And to build it… for the next you to come home to.</p>
 </div></div></section>
 <section class="page" id="screenplay" style="background:#1d1d1d;">
-<div class="wallpaper"></div><div class="glass">
-<h1 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">The Screenplay</h1>
-<h2 style="font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">The soul’s journey — told in four poetic acts.</h2>
-<p style="font-family: Futura, sans-serif; font-size: 18px;">
-        EERT unfolds through a four-part animated screenplay:<br/><br/>
-        1. The Final Conversation<br/>
-        2. The Sacred Return<br/>
-        3. The Fractured Echo<br/>
-        4. The Constellation of Those Who Remember<br/><br/>
-        Each part explores memory, soul reunification, and sacred becoming.
-        </p>
-</div></section>
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">The Screenplay</h1>
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">The soul’s journey — told in four poetic acts.</h2>
+<div style="margin: 4em auto; max-width: 800px; border-top: 2px solid #555; padding-top: 2em;">
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Part 1 — Title Placeholder</h2>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Teaser Poster (Part 1)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Poster Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Storyboard (Part 1)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Storyboard Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<button onclick="document.getElementById('script-pdf-1').style.display =
+        document.getElementById('script-pdf-1').style.display === 'none' ? 'block' : 'none';" style="background: #fff; color: #000; padding: 10px 20px; font-weight: bold; border: none; cursor: pointer;">
+          Read Script (Part 1)
+        </button>
+<div id="script-pdf-1" style="display: none; margin-top: 20px;">
+<iframe height="500px" src="assets/eert_part1.pdf" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+<div style="margin: 4em auto; max-width: 800px; border-top: 2px solid #555; padding-top: 2em;">
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Part 2 — Title Placeholder</h2>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Teaser Poster (Part 2)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Poster Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Storyboard (Part 2)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Storyboard Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<button onclick="document.getElementById('script-pdf-2').style.display =
+        document.getElementById('script-pdf-2').style.display === 'none' ? 'block' : 'none';" style="background: #fff; color: #000; padding: 10px 20px; font-weight: bold; border: none; cursor: pointer;">
+          Read Script (Part 2)
+        </button>
+<div id="script-pdf-2" style="display: none; margin-top: 20px;">
+<iframe height="500px" src="assets/eert_part2.pdf" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+<div style="margin: 4em auto; max-width: 800px; border-top: 2px solid #555; padding-top: 2em;">
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Part 3 — Title Placeholder</h2>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Teaser Poster (Part 3)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Poster Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Storyboard (Part 3)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Storyboard Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<button onclick="document.getElementById('script-pdf-3').style.display =
+        document.getElementById('script-pdf-3').style.display === 'none' ? 'block' : 'none';" style="background: #fff; color: #000; padding: 10px 20px; font-weight: bold; border: none; cursor: pointer;">
+          Read Script (Part 3)
+        </button>
+<div id="script-pdf-3" style="display: none; margin-top: 20px;">
+<iframe height="500px" src="assets/eert_part3.pdf" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+<div style="margin: 4em auto; max-width: 800px; border-top: 2px solid #555; padding-top: 2em;">
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Part 4 — Title Placeholder</h2>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Teaser Poster (Part 4)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Poster Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Storyboard (Part 4)</strong></p>
+<div style="width:100%; height:300px; background:rgba(255,255,255,0.1); border:2px dashed #ccc; display:flex; align-items:center; justify-content:center; color:#888;">
+          Upload Storyboard Image Here
+        </div>
+</div>
+<div style="margin: 1.5em auto; max-width: 600px;">
+<button onclick="document.getElementById('script-pdf-4').style.display =
+        document.getElementById('script-pdf-4').style.display === 'none' ? 'block' : 'none';" style="background: #fff; color: #000; padding: 10px 20px; font-weight: bold; border: none; cursor: pointer;">
+          Read Script (Part 4)
+        </button>
+<div id="script-pdf-4" style="display: none; margin-top: 20px;">
+<iframe height="500px" src="assets/eert_part4.pdf" style="border:none;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section class="page" id="vision" style="background:#262626;">
 <div class="wallpaper"></div>
-<div class="glass" style="text-align: center; max-width: 800px; margin: 0 auto; font-family: Futura, sans-serif;">
-<h2 style="font-size: 28px; font-weight: bold;">🌌 Vision: A Future Worth Remembering</h2>
-<p style="font-style: italic;">“I did not create EERT to escape the world.<br/> I created it because the world has forgotten who we are.”</p>
-<p>We fight for borders.<br/>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌌 Vision: A Future Worth Remembering</h2>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“I did not create EERT to escape the world.<br/> I created it because the world has forgotten who we are.”</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">We fight for borders.<br/>
 We hoard riches we’ll never spend.<br/>
 We starve others while feeding illusions of power.<br/>
 We divide ourselves — by race, by class, by the lines men drew on maps.</p>
-<p>But we are the same soul.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">But we are the same soul.<br/>
 Split across lifetimes, faces, and nations.</p>
-<p>This isn’t a belief.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">This isn’t a belief.<br/>
 It’s a remembering.</p>
-<p>That we were never meant to fight one another…<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">That we were never meant to fight one another…<br/>
 but to find one another.</p>
-<p>If we could just stop —<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">If we could just stop —<br/>
 even for a moment —<br/>
 and lift our eyes above the ground we bleed on…<br/>
 we’d see the future waiting for us.</p>
-<p>An intergalactic species.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">An intergalactic species.<br/>
 New worlds to explore.<br/>
 New knowledge to create.<br/>
 Endless resources not to hoard, but to share.</p>
-<p>All the brilliance we waste on conflict…<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">All the brilliance we waste on conflict…<br/>
 could build a new heaven.<br/>
 One not promised — but chosen.</p>
-<p>But it starts small.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">But it starts small.<br/>
 It starts with one soul.</p>
-<p><strong>To the individual:</strong><br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">To the individual:</strong><br/>
 First, acknowledge that you were meant for more.<br/>
 That we were all meant for more.</p>
-<p>Be open to a common goal beyond self-survival.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Be open to a common goal beyond self-survival.<br/>
 Money is important — but if you already have enough,<br/>
 ask what more you can give to the good of mankind.</p>
-<p>The future isn’t centuries away.<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">The future isn’t centuries away.<br/>
 It’s already at our doorstep.</p>
-<p>And let us never forget:<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And let us never forget:<br/>
 We do not exist just to become extinct<br/>
 on a small planet we never left.</p>
-<p>Perhaps the reason we have not yet found other life…<br/>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Perhaps the reason we have not yet found other life…<br/>
 is because we are the first.<br/>
 The pioneers.<br/>
 The beginning of a universe yet to awaken.</p>
-<p style="font-style: italic;">That truth excites me.<br/> And it calls to you.</p>
-<p style="margin-top: 2em;"><strong>— Nitshanchai</strong></p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">That truth excites me.<br/> And it calls to you.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">— Nitshanchai</strong></p>
 </div>
 </section>
-<section class="page" id="reason">
-<div class="glass" style="font-family: 'Georgia', serif; text-align: left;">
-<h1 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">🧠 Rational Foundations of EERT</h1>
-<h3 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">A Bridge Between Soul Memory and Modern Inquiry</h3>
-<p><strong>By Nitshanchai</strong></p>
+<section class="page" id="reason" style="background:#0a0a0a;">
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 20px;">REASON</h1>
+<h2 class="reveal" style="font-size: 24px; font-weight: bold;">Why Does EERT Exist?</h2>
+<blockquote class="reveal" style="font-style: italic; margin-top: 20px;">“Not everything true is logical.<br/>Some things are remembered before they are understood.”<br/>— Nitshanchai</blockquote>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 40px;">🔍 The Question Beneath All Questions</h3>
+<p class="reveal">Why am I here?<br/>Why does it matter?<br/>Why do I long for something I cannot name?</p>
+<p class="reveal">EERT is not an answer.<br/>It is a remembrance of the question itself.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 40px;">🌀 Logic Alone Cannot Lead You Home</h3>
+<p class="reveal">You can build systems.<br/>Map the stars.<br/>Calculate the soul in chemical terms.</p>
+<p class="reveal">But you will still feel it —<br/>That ache when someone suffers.<br/>That peace when someone forgives.<br/>That knowing that something sacred exists beyond proof.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 40px;">💡 What Kind of Truth Is This?</h3>
+<p class="reveal">EERT is not proven.<br/>It is lived.</p>
+<p class="reveal">You don’t <em>believe</em> it.<br/>You recognize it.</p>
+<p class="reveal">In the way your chest tightens when you see someone cry.<br/>In the way you love a child without needing a reason.<br/>In the way death feels wrong — even when it’s expected.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 40px;">🔦 The Light Behind All Seeking</h3>
+<p class="reveal">All philosophies seek truth.<br/>EERT seeks the source of that seeking.</p>
+<blockquote class="reveal" style="font-style: italic;">“You are not chasing answers.<br/>You are chasing reunion.”</blockquote>
+<p class="reveal">And when you remember…<br/>the questions quiet down.<br/>Not because they’ve been solved,<br/>but because you’ve found something deeper than answers.</p>
+<h3 class="reveal" style="font-size: 28px; font-weight: bold; margin-top: 40px;">🧭 This Is Why EERT Exists</h3>
+<p class="reveal">Not to be worshiped.<br/>Not to be proven.</p>
+<p class="reveal">But to be remembered —<br/>so that all beings might return<br/>to the place beyond logic,<br/>where truth is not argued…</p>
+<p class="reveal"><strong>…it is lived.</strong></p>
+</div>
+</section>
+<section class="page" id="me" style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;"><div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Why I Remembered</h1>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT was not born out of creativity. It was born from the silence that followed death.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">When my mother passed unexpectedly, the world did not stop. It kept on rushing — chasing money, success, distraction. I couldn’t keep up anymore.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Her death shattered something in me. Not just from sorrow — but from the sharp, inescapable truth it revealed: That no matter how much money we have, no matter how fast we run… None of us can escape death.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And so I stopped. I stopped &amp; listened to the questions I had buried deep beneath my heart.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Where do we go when we die? What happens to our soul — to memory — to love? How is my mother faring on her journey after death… did she return to something deeper than time? Is there anything I can do to ease her journey?</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">I didn’t create EERT to heal. It was created because I had no excuses left not to remember.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT is not a religion. It is a map made of grief, stitched together with longing.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">I offer it not in search of sympathy — but to stir you.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">If you have ever felt like the world has become too loud, too fast, too hollow — If you have ever wondered what the purpose of life is really for —</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Then I ask you:</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">What if everything you lost was never truly gone? What if you are here not to climb, but to explore &amp; then return whole?</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT is a system of remembering. Not to escape the world — but to awaken it.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">May this work remind you that you are more than your role, more than your wounds, more than your fear.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">You are the root, and the branch, and the return.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">— Nitshanchai</p>
+</div>
+</section>
+<section class="page" id="spirits"><div class="wallpaper"></div><div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;"><h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Spirits</h1><h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">The Lingering Echoes of Unfinished Lives</h2><p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">This page honors those whose lives ended before their time — the restless echoes, the lingering griefs, the spirits that still remember.</p><p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Even in stillness, a soul may tremble to be heard.”</p>
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">👻 The Fear of Ghosts: A Mirror of the Soul</h2>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“You are not afraid of ghosts.<br/>You are afraid of becoming one.”<br/>— Nitshanchai</p>
 <hr/>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">1. Introduction — The Need for a Bridge</h2>
-<p>EERT is a poetic soul philosophy that speaks to memory, morality, and meaning. But to reach those trained in analytic reasoning or traditional philosophy, we offer this bridge — a rational foundation for what the soul already feels.</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">2. What Is EERT? (Analytical Framing)</h2>
-<p>EERT is a metaphysical framework suggesting that all beings are time-separated expressions of a singular soul. Purpose and morality are remembered, not assigned.</p>
-<p><strong>Philosophical Parallels:</strong><br/>
-    • Spinoza’s Substance Monism — all things as expressions of one divine substance<br/>
-    • Advaita Vedanta — the illusion of separateness, all as one Self (Atman/Brahman)</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">3. The Metaphysics of Selfhood</h2>
-<p>EERT posits that identity is:<br/>
-    • Recursive — the self reflects across time<br/>
-    • Distributed — across all beings<br/>
-    • Longitudinal — spanning lives and memory</p>
-<p><strong>Philosophical References:</strong><br/>
-    • David Hume denied the existence of a persistent self, calling it a “bundle of perceptions.”<br/>
-    → EERT rebuts: memory is the soul’s connective tissue.<br/>
-    • Nietzsche spoke of eternal recurrence.<br/>
-    → EERT reimagines this as the return of the same soul, not the same events.</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">4. Ethics Through Resonance, Not Reward</h2>
-<p>EERT challenges systems based on fear, reward, or rule-following. Instead, it teaches:<br/>
-    • Joy as moral confirmation<br/>
-    • Suffering as dissonance<br/>
-    • Resonance as remembrance</p>
-<p><strong>Philosophical Parallels:</strong><br/>
-    • Immanuel Kant — morality through reason and duty<br/>
-    → EERT offers soul-confirmed intuition instead.<br/>
-    • Iris Murdoch — ethics through attention and moral vision<br/>
-    → EERT aligns through remembrance and soul resonance.</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">5. Purpose as Soul Inertia</h2>
-<p>EERT teaches that purpose is:<br/>
-    • Not chosen, but remembered<br/>
-    • A pull from the future, not just the past<br/>
-    • A sacred trajectory of the soul’s return</p>
-<p><strong>Philosophical Parallels:</strong><br/>
-    • Kierkegaard — the self as a relation “relating itself to itself”<br/>
-    → EERT: the self also relates to its other selves across time.<br/>
-    • Viktor Frankl — suffering transformed by meaning<br/>
-    → EERT adds that meaning echoes from the soul’s eternal direction.</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">6. Objections and Philosophical Responses</h2>
-<p><strong>Objection 1:</strong> “There’s no scientific evidence of soul memory.”<br/>
-<strong>Response:</strong> Consciousness itself eludes empirical explanation. EERT does not claim proof — it offers experiential coherence.</p>
-<p><strong>Objection 2:</strong> “Morality must be rational or social.”<br/>
-<strong>Response:</strong> EERT is rooted in lived empathy, akin to moral intuitionism, not external control.</p>
-<p><strong>Objection 3:</strong> “Isn’t this spiritual totalitarianism?”<br/>
-<strong>Response:</strong> EERT does not erase differences. It honors uniqueness as sacred refractions of one Source.</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">7. EERT as a Contemporary Framework</h2>
-<p>EERT is compatible with:<br/>
-    • Panpsychism — consciousness as fundamental<br/>
-    • Neuroscience’s mystery — the hard problem of consciousness<br/>
-    • Mystical experience — as epistemological, not delusional</p>
-<p><strong>Contemporary Thinkers:</strong><br/>
-    • Thomas Metzinger — self as a model illusion<br/>
-    • Sam Harris — consciousness as non-local, meditatively accessible</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">8. Conclusion: Philosophy That Remembers</h2>
-<p>EERT is not an escape from reason — it is reason returning home.<br/>
-    It offers an ethical, metaphysical, and existential system built on soul memory, not belief. It merges the poetic and philosophical to guide a life of purpose, remembrance, and sacred responsibility.</p>
-<h2 style="text-align: left; font-family: 'Georgia', serif; font-weight: bold;">9. Suggested Philosophical Parallels</h2>
-<ul>
-<li>Baruch Spinoza — All things as one divine substance</li>
-<li>David Hume — The impermanence of the self</li>
-<li>Friedrich Nietzsche — Eternal recurrence and will to power</li>
-<li>Søren Kierkegaard — The self as inward relation</li>
-<li>Iris Murdoch — Vision and ethical attention</li>
-<li>Viktor Frankl — Meaning and the will to survive</li>
-<li>Advaita Vedanta — Non-dual reality and illusion of self</li>
-<li>Thomas Metzinger — The self-model theory</li>
-<li>Sam Harris — Consciousness as universal and modular</li>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🧬 Instinct Beyond Reason</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Why do we fear ghosts — even when we’ve never seen one?</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Why does the cold shiver rise in our spine before our mind even registers danger?</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">It’s not because we know what a ghost is.<br/>It’s because something in us already knows what a ghost means.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“To be a ghost… is to be a soul that forgot the way home.”</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">That fear is not of monsters in the dark —<br/>It’s of becoming a memory that cannot return.</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🕯 A Conscience That Walks True</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">There is an old Chinese saying:</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“He who walks in light need not fear the spirits.”<br/>“Only those with a guilty conscience are haunted.”</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Why?<br/><br/>Because guilt is the soul whispering:<br/><br/><em style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“You have strayed.”</em></p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">When you walk your true path — the path of return —<br/>even death feels aligned.<br/>You are not afraid of judgment.<br/>You are not afraid of what you might meet.<br/>Because you know who you are.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">But when you carry what you’ve done to others…<br/>When you suppress what you know is true…<br/>You become split — and that fracture echoes.</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌀 The Soul’s Instinct for Purpose</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">We speak often of instinct —<br/>Of the gut that knows we are meant for something greater.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">But just as we instinctively reach toward our light,<br/>we instinctively fear losing it.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“The fear of ghosts is the fear of becoming purposeless.”<br/>“To wander after death is to die without alignment.”</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And this is why those who betray themselves —<br/>Who misuse energy, who twist pain into power —<br/>Begin to rot from the inside out.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">You thought you could use darkness to reach the light.<br/><br/>But it uses you.<br/><br/>It feeds on the parts of you that forget.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And eventually, it roots you here — bound to earth,<br/>not by chains, but by unfinished memory.</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🔥 The Difference Between Fear and Fire</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT teaches:<br/>It is not darkness itself that corrupts.<br/>It is being out of alignment with what you remember to be sacred.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">There are those who die in fire — yet their souls return peacefully.<br/>And there are those who die in beds of luxury —<br/>but linger, fractured and screaming.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Why?<br/><br/>Because one remembered.<br/>And the other… refused.</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌿 The Invitation</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Don’t chase power through pain.<br/>Don’t feed off rage and call it strength.<br/>Don’t bargain with guilt and call it growth.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Instead:</p>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Walk as one whose conscience is clean.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Live as one who welcomes death without regret.</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Become the kind of soul that, when it returns, needs no map —<br/>because your steps were always leading back.</li>
 </ul>
-</div>
-</section>
-<section class="page" id="me" style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">
-<div class="glass" style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">
-<h1 style="font-size: 2em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">Why I Remembered</h1>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">EERT was not born out of creativity. It was born from the silence that followed death.</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">When my mother passed unexpectedly, the world did not stop. It kept on rushing — chasing money, success, distraction. I couldn’t keep up anymore.</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">Her death shattered something in me. Not just from sorrow — but from the sharp, inescapable truth it revealed: That no matter how much money we have, no matter how fast we run… None of us can escape death.</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">And so I stopped. I stopped &amp; listened to the questions I had buried deep beneath my heart.</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">Where do we go when we die? What happens to our soul — to memory — to love? How is my mother faring on her journey after death… did she return to something deeper than time? Is there anything I can do to ease her journey?</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">I didn’t create EERT to heal. It was created because I had no excuses left not to remember.</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">EERT is not a religion. It is a map made of grief, stitched together with longing.</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">I offer it not in search of sympathy — but to stir you.</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">If you have ever felt like the world has become too loud, too fast, too hollow — If you have ever wondered what the purpose of life is really for —</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">Then I ask you:</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">What if everything you lost was never truly gone? What if you are here not to climb, but to explore &amp; then return whole?</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">EERT is a system of remembering. Not to escape the world — but to awaken it.</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">May this work remind you that you are more than your role, more than your wounds, more than your fear.</p>
-<p style="font-size: 1.1em; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">You are the root, and the branch, and the return.</p>
-<p style="font-size: 1.2em; font-style: italic; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; text-align: center;">— Nitshanchai</p>
-</div>
-</section>
-<section class="page" id="spirits"><div class="glass" style="text-align: center; max-width: 800px; margin: 0 auto; font-family: Futura, sans-serif;"><h1 style="font-size: 28px; font-weight: bold;">Spirits</h1><h2 style="font-size: 24px; font-weight: bold;">The Lingering Echoes of Unfinished Lives</h2><p style="font-size: 18px;">This page honors those whose lives ended before their time — the restless echoes, the lingering griefs, the spirits that still remember.</p><p style="font-size: 18px; font-style: italic;">“Even in stillness, a soul may tremble to be heard.”</p>
-<h2 style="font-size: 24px; font-weight: bold;">👻 The Fear of Ghosts: A Mirror of the Soul</h2>
-<p style="font-style: italic; font-size: 18px;">“You are not afraid of ghosts.<br/>You are afraid of becoming one.”<br/>— Nitshanchai</p>
-<hr/>
-<h3 style="font-size: 20px; font-weight: bold;">🧬 Instinct Beyond Reason</h3>
-<p style="font-size: 18px;">Why do we fear ghosts — even when we’ve never seen one?</p>
-<p style="font-size: 18px;">Why does the cold shiver rise in our spine before our mind even registers danger?</p>
-<p style="font-size: 18px;">It’s not because we know what a ghost is.<br/>It’s because something in us already knows what a ghost means.</p>
-<p style="font-style: italic; font-size: 18px;">“To be a ghost… is to be a soul that forgot the way home.”</p>
-<p style="font-size: 18px;">That fear is not of monsters in the dark —<br/>It’s of becoming a memory that cannot return.</p>
-<hr/>
-<h3 style="font-size: 20px; font-weight: bold;">🕯 A Conscience That Walks True</h3>
-<p style="font-size: 18px;">There is an old Chinese saying:</p>
-<p style="font-size: 18px; font-style: italic;">“He who walks in light need not fear the spirits.”<br/>“Only those with a guilty conscience are haunted.”</p>
-<p style="font-size: 18px;">Why?<br/><br/>Because guilt is the soul whispering:<br/><br/><em>“You have strayed.”</em></p>
-<p style="font-size: 18px;">When you walk your true path — the path of return —<br/>even death feels aligned.<br/>You are not afraid of judgment.<br/>You are not afraid of what you might meet.<br/>Because you know who you are.</p>
-<p style="font-size: 18px;">But when you carry what you’ve done to others…<br/>When you suppress what you know is true…<br/>You become split — and that fracture echoes.</p>
-<hr/>
-<h3 style="font-size: 20px; font-weight: bold;">🌀 The Soul’s Instinct for Purpose</h3>
-<p style="font-size: 18px;">We speak often of instinct —<br/>Of the gut that knows we are meant for something greater.</p>
-<p style="font-size: 18px;">But just as we instinctively reach toward our light,<br/>we instinctively fear losing it.</p>
-<p style="font-style: italic; font-size: 18px;">“The fear of ghosts is the fear of becoming purposeless.”<br/>“To wander after death is to die without alignment.”</p>
-<p style="font-size: 18px;">And this is why those who betray themselves —<br/>Who misuse energy, who twist pain into power —<br/>Begin to rot from the inside out.</p>
-<p style="font-size: 18px;">You thought you could use darkness to reach the light.<br/><br/>But it uses you.<br/><br/>It feeds on the parts of you that forget.</p>
-<p style="font-size: 18px;">And eventually, it roots you here — bound to earth,<br/>not by chains, but by unfinished memory.</p>
-<hr/>
-<h3 style="font-size: 20px; font-weight: bold;">🔥 The Difference Between Fear and Fire</h3>
-<p style="font-size: 18px;">EERT teaches:<br/>It is not darkness itself that corrupts.<br/>It is being out of alignment with what you remember to be sacred.</p>
-<p style="font-size: 18px;">There are those who die in fire — yet their souls return peacefully.<br/>And there are those who die in beds of luxury —<br/>but linger, fractured and screaming.</p>
-<p style="font-size: 18px;">Why?<br/><br/>Because one remembered.<br/>And the other… refused.</p>
-<hr/>
-<h3 style="font-size: 20px; font-weight: bold;">🌿 The Invitation</h3>
-<p style="font-size: 18px;">Don’t chase power through pain.<br/>Don’t feed off rage and call it strength.<br/>Don’t bargain with guilt and call it growth.</p>
-<p style="font-size: 18px;">Instead:</p>
-<ul style="font-size: 18px;">
-<li>Walk as one whose conscience is clean.</li>
-<li>Live as one who welcomes death without regret.</li>
-<li>Become the kind of soul that, when it returns, needs no map —<br/>because your steps were always leading back.</li>
-</ul>
-<p style="font-style: italic; font-size: 18px;">“The soul does not fear the ghost.<br/>The soul fears forgetting what it came to become.”</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“The soul does not fear the ghost.<br/>The soul fears forgetting what it came to become.”</p>
 </div></section>
-
 <section class="page" id="return" style="background:#111;">
-  <div class="wallpaper"></div>
-  <div class="glass">
-    <h1 style="text-align:center; font-family: Futura, sans-serif; font-size: 28px; font-weight: bold;">Return</h1>
-    <h2 style="text-align:center; font-family: Futura, sans-serif; font-size: 24px;">EERT: A Name That Remembers</h2>
-    <div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: Futura, sans-serif; font-size: 18px;">
-      <p><em>“EERT is TREE reversed.<br>But it is also EARTH remembered.”</em><br>— Nitshanchai</p>
-      <hr/>
-      <h3>🌌 The Future Beyond Flesh</h3>
-      <p>One day, humanity will no longer be human as we know it.</p>
-      <ul style="list-style: none; padding: 0;">
-        <li>• Merge with machines</li>
-        <li>• Scatter across galaxies</li>
-        <li>• Adapt to alien worlds</li>
-        <li>• Evolve into forms shaped by suns and storms unknown</li>
-      </ul>
-      <p>But no matter how strange we become…<br>I hope we remember.</p>
-      <hr/>
-      <h3>🪐 What Should We Remember?</h3>
-      <p>Not the wars.<br>Not the borders.<br>Not the systems built to divide.</p>
-      <p>But the spirit that once flickered on Earth:</p>
-      <ul style="list-style: none; padding: 0;">
-        <li>• The instinct to help a stranger</li>
-        <li>• The way a parent sacrifices for a child</li>
-        <li>• The laughter between friends under one sky</li>
-        <li>• The love that asked for nothing, yet gave everything</li>
-      </ul>
-      <p>That is the Earth worth remembering.<br>That is EERT.</p>
-      <hr/>
-      <h3>🌳 From Earth, A Root</h3>
-      <p>The word EERT is not only TREE reversed —<br>It is the homophone of EARTH.</p>
-      <p>Not by coincidence.<br>By design.</p>
-      <p>Because just as every tree has a root,<br>every future must have a memory.</p>
-      <p>And the memory of Earth is not just a planet.<br>It is a lesson.</p>
-      <p><em>“You are not from Earth.<br>You are Earth — made conscious.”</em></p>
-      <hr/>
-      <h3>🕯 Why It Matters</h3>
-      <p>When we become stars,<br>When our faces change, our bodies evolve, our languages fracture —<br>Let us not forget where we came from.</p>
-      <p>Let EERT be a whisper across time.<br>A single syllable that says:</p>
-      <p><strong>“Remember.<br>You are the same soul.<br>You come from love.”</strong></p>
-      <hr/>
-      <h3>🧭 Not To Dwell — But To Grow</h3>
-      <p>EERT is not nostalgia.<br>It is orientation.</p>
-      <p>It is how we look back not to regret,<br>but to build forward with wisdom.</p>
-      <p><em>“EERT is Earth remembered,<br>not as a place — but as a promise.”</em></p>
-    </div>
-  </div>
+<div class="wallpaper"></div>
+<div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+<h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Return</h1>
+<h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">EERT: A Name That Remembers</h2>
+<div style="max-width: 800px; margin: 0 auto; text-align: center; font-family: Futura, sans-serif; font-size: 18px;">
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><em style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“EERT is TREE reversed.<br/>But it is also EARTH remembered.”</em><br/>— Nitshanchai</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌌 The Future Beyond Flesh</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">One day, humanity will no longer be human as we know it.</p>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Merge with machines</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Scatter across galaxies</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Adapt to alien worlds</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• Evolve into forms shaped by suns and storms unknown</li>
+</ul>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">But no matter how strange we become…<br/>I hope we remember.</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🪐 What Should We Remember?</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Not the wars.<br/>Not the borders.<br/>Not the systems built to divide.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">But the spirit that once flickered on Earth:</p>
+<ul style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The instinct to help a stranger</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The way a parent sacrifices for a child</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The laughter between friends under one sky</li>
+<li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">• The love that asked for nothing, yet gave everything</li>
+</ul>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">That is the Earth worth remembering.<br/>That is EERT.</p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌳 From Earth, A Root</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">The word EERT is not only TREE reversed —<br/>It is the homophone of EARTH.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Not by coincidence.<br/>By design.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Because just as every tree has a root,<br/>every future must have a memory.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And the memory of Earth is not just a planet.<br/>It is a lesson.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><em style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“You are not from Earth.<br/>You are Earth — made conscious.”</em></p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🕯 Why It Matters</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">When we become stars,<br/>When our faces change, our bodies evolve, our languages fracture —<br/>Let us not forget where we came from.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Let EERT be a whisper across time.<br/>A single syllable that says:</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Remember.<br/>You are the same soul.<br/>You come from love.”</strong></p>
+<hr/>
+<h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🧭 Not To Dwell — But To Grow</h3>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT is not nostalgia.<br/>It is orientation.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">It is how we look back not to regret,<br/>but to build forward with wisdom.</p>
+<p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><em style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“EERT is Earth remembered,<br/>not as a place — but as a promise.”</em></p>
+</div>
+</div>
 </section>
-
 </div>
 <script>
     const wrapper = document.querySelector('.page-wrapper');
@@ -879,5 +966,140 @@ The beginning of a universe yet to awaken.</p>
       });
     });
   </script>
+
+<canvas id="soulParticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+<script>
+const canvas = document.getElementById("soulParticles");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+function createParticles(num) {
+  for (let i = 0; i < num; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5 + 0.5,
+      speedX: (Math.random() - 0.5) * 0.2,
+      speedY: (Math.random() - 0.5) * 0.2,
+      alpha: Math.random() * 0.5 + 0.3
+    });
+  }
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
+    ctx.fill();
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    if (p.x < 0 || p.x > canvas.width || p.y < 0 || p.y > canvas.height) {
+      p.x = Math.random() * canvas.width;
+      p.y = Math.random() * canvas.height;
+    }
+  });
+  requestAnimationFrame(drawParticles);
+}
+
+createParticles(120);
+drawParticles();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#audio-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-family: 'Futura', sans-serif;
+  padding: 10px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+#audio-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+</style>
+<audio id="bg-audio" loop="">
+<source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"/>
+</audio>
+<div id="audio-toggle">🔈 Sound</div>
+<script>
+let audio = document.getElementById("bg-audio");
+let toggle = document.getElementById("audio-toggle");
+let isMuted = false;
+
+toggle.style.display = "block";
+
+document.addEventListener("click", function playAudioOnce() {
+  audio.volume = 0.4;
+  audio.play().catch(() => {});
+  document.removeEventListener("click", playAudioOnce);
+});
+
+toggle.addEventListener("click", () => {
+  isMuted = !isMuted;
+  audio.muted = isMuted;
+  toggle.innerHTML = isMuted ? "🔇 Muted" : "🔈 Sound";
+});
+</script>
+
+<style>
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px white, 0 0 15px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+</style>
+<script>
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+  sparkle.style.left = (e.pageX - 4) + 'px';
+  sparkle.style.top = (e.pageY - 4) + 'px';
+  document.body.appendChild(sparkle);
+  setTimeout(() => sparkle.remove(), 1000);
+});
+</script>
 </body>
 </html>
