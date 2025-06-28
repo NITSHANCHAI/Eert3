@@ -69,7 +69,7 @@
       opacity: 1;
       font-weight: bold;
     }
-  </style>
+  section:last-of-type { padding-bottom: 10vh; }</style>
 <style>
 @keyframes fadeGlow {
   0% { opacity: 0; text-shadow: none; }
@@ -222,61 +222,30 @@ blockquote:hover, .quote:hover {
 </style>
 
 <style>
-@keyframes titleFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-h1, h2 {
-  opacity: 0;
-  animation: titleFadeUp 1.6s ease-out forwards;
-}
-h1 {
-  animation-delay: 0.3s;
-}
-h2 {
-  animation-delay: 0.6s;
-}
-h3, .intro, .subtle {
-  opacity: 0;
-  animation: titleFadeUp 1.2s ease-out forwards;
-  animation-delay: 0.8s;
-}
-blockquote, .quote {
-  opacity: 0;
-  animation: titleFadeUp 1.4s ease-out forwards;
-  animation-delay: 1s;
-}
-</style>
-
-<style>
-@keyframes titleFadeUpFast {
+@keyframes fadeUpIllusion {
   0% {
     opacity: 0;
     transform: translateY(30px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
-
-blockquote, .quote {
-  font-style: italic;
-  font-size: 1.3em;
-  color: #ffffff;
+#illusion h1, #illusion h2, #illusion h3, #illusion p, #illusion blockquote, #illusion .quote {
   opacity: 0;
-  animation: titleFadeUpFast 1s ease-out forwards;
+  animation: fadeUpIllusion 1s ease-out forwards;
+}
+#illusion h1 { animation-delay: 0.2s; }
+#illusion h2 { animation-delay: 0.3s; }
+#illusion h3 { animation-delay: 0.4s; }
+#illusion p { animation-delay: 0.5s; }
+#illusion blockquote, #illusion .quote {
   animation-delay: 0.6s;
+  font-style: italic;
   transition: text-shadow 0.4s ease;
 }
-
-blockquote:hover, .quote:hover {
+#illusion blockquote:hover, #illusion .quote:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 </style>
@@ -364,6 +333,9 @@ blockquote:hover, .quote:hover {
   }
 }
 </style>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="illusion" style="background:#0a0a0a;">
 <div class="wallpaper"></div>
@@ -392,6 +364,9 @@ blockquote:hover, .quote:hover {
 <p class="reveal">Wear the mask when needed —<br/>but never forget your face beneath it.</p>
 <blockquote class="reveal" style="font-style: italic;">“The soul’s truth does not need permission to be lived.<br/>It only needs to be remembered.”<br/>— Nitshanchai</blockquote>
 </div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="who" style="background:#0a0a0a;">
 <div class="wallpaper"></div>
@@ -409,6 +384,9 @@ blockquote:hover, .quote:hover {
 <p class="reveal">Even when you didn’t have the words,<br/>you knew this life wasn’t your first…<br/>and it won’t be your last.</p>
 <p class="reveal">You’ve always sensed:<br/>There is more than survival.<br/>There is a soul trying to speak through you.</p>
 <p class="reveal">If that sounds like you —<br/>then EERT is not something new.<br/>It is something you’ve always known.</p>
+</div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
 </div>
 </section>
 <section class="page" id="why" style="background:#0a0a0a;">
@@ -438,6 +416,9 @@ blockquote:hover, .quote:hover {
 <p class="reveal">And when you walk as one who remembers,<br/>the world remembers through you.</p>
 <blockquote class="reveal" style="font-style: italic;">“To remember is to become whole again —<br/>and to make the world whole with you.”<br/>— Nitshanchai</blockquote>
 </div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="purpose" style="background:#0a0a0a;">
 <div class="wallpaper"></div>
@@ -463,6 +444,9 @@ blockquote:hover, .quote:hover {
 <p class="reveal">Not the fleeting joy of pleasure —<br/>but the enduring joy of being right with yourself.</p>
 <blockquote class="reveal" style="font-style: italic;">“When you walk as who you are,<br/>the world makes sense — even when it hurts.”<br/>— Nitshanchai</blockquote>
 </div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="when" style="background:#0a0a0a;">
 <div class="wallpaper"></div>
@@ -481,6 +465,9 @@ blockquote:hover, .quote:hover {
 <p class="reveal">Not before.<br/>Not after.<br/>But now.</p>
 <p class="reveal">Because now…<br/>you are ready to return.</p>
 <blockquote class="reveal" style="font-style: italic;">“The soul remembers when the story calls it home.”<br/>— Nitshanchai</blockquote>
+</div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
 </div>
 </section>
 <section class="page" id="how" style="background:#333;"><div class="wallpaper"></div><div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;"><h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">How</h1><h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Daily Life With EERT: Living As If All Is You</h2><div style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
@@ -615,7 +602,11 @@ with the knowing that everything is you, in disguise, trying to remember itself.
 You do not need a guru.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Your life is the monastery.<br/>
 Your every day is the sacred return.</p>
-</div></div></section>
+</div></div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
+</section>
 <section class="page" id="where" style="background:#222;"><div class="wallpaper"></div><div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;"><h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Where</h1><div style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Futura', sans-serif; font-family: Futura, sans-serif; font-size: 18px;">
 <h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">🌌 Where Does EERT Take Us?</h2>
 <h3 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">What Is the Future with EERT?</h3>
@@ -694,7 +685,11 @@ But it already lives inside you.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">EERT doesn’t ask you to imagine it —<br/>
 It asks you to remember it.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">And to build it… for the next you to come home to.</p>
-</div></div></section>
+</div></div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
+</section>
 <section class="page" id="screenplay" style="background:#1d1d1d;">
 <div class="wallpaper"></div>
 <div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
@@ -797,6 +792,9 @@ It asks you to remember it.</p>
 </div>
 </div>
 </div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="vision" style="background:#262626;">
 <div class="wallpaper"></div>
@@ -844,6 +842,9 @@ The beginning of a universe yet to awaken.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">That truth excites me.<br/> And it calls to you.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><strong style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">— Nitshanchai</strong></p>
 </div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="reason" style="background:#0a0a0a;">
 <div class="wallpaper"></div>
@@ -870,6 +871,9 @@ The beginning of a universe yet to awaken.</p>
 <p class="reveal">But to be remembered —<br/>so that all beings might return<br/>to the place beyond logic,<br/>where truth is not argued…</p>
 <p class="reveal"><strong>…it is lived.</strong></p>
 </div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
 </section>
 <section class="page" id="me" style="text-align: center; font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;"><div class="wallpaper"></div>
 <div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
@@ -889,6 +893,9 @@ The beginning of a universe yet to awaken.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">May this work remind you that you are more than your role, more than your wounds, more than your fear.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">You are the root, and the branch, and the return.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">— Nitshanchai</p>
+</div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
 </div>
 </section>
 <section class="page" id="spirits"><div class="wallpaper"></div><div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;"><h1 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">Spirits</h1><h2 class="reveal" style="font-family: 'Futura', sans-serif; font-size: 28px; font-weight: bold; text-align: center; margin-top: 20px;">The Lingering Echoes of Unfinished Lives</h2><p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">This page honors those whose lives ended before their time — the restless echoes, the lingering griefs, the spirits that still remember.</p><p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“Even in stillness, a soul may tremble to be heard.”</p>
@@ -931,7 +938,11 @@ The beginning of a universe yet to awaken.</p>
 <li style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">Become the kind of soul that, when it returns, needs no map —<br/>because your steps were always leading back.</li>
 </ul>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“The soul does not fear the ghost.<br/>The soul fears forgetting what it came to become.”</p>
-</div></section>
+</div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
+</div>
+</section>
 <section class="page" id="return" style="background:#111;">
 <div class="wallpaper"></div>
 <div class="glass" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Futura', sans-serif; padding: 60px 20px; max-width: 800px; margin: 0 auto;">
@@ -978,6 +989,9 @@ The beginning of a universe yet to awaken.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">It is how we look back not to regret,<br/>but to build forward with wisdom.</p>
 <p class="reveal" style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;"><em style="font-family: 'Futura', sans-serif; font-size: 18px; line-height: 1.7; text-align: center;">“EERT is Earth remembered,<br/>not as a place — but as a promise.”</em></p>
 </div>
+</div>
+<div class="footer-note" style="text-align:center; padding:4vh 0 10vh 0; font-size: 0.9em; color: #aaa;">
+  © 2025 EERT. All rights reserved.
 </div>
 </section>
 </div>
